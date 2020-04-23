@@ -1,0 +1,11 @@
+﻿{
+  "ConnectionString": "server=.;database=NewTempProject;uid=sa;pwd=123456",
+  "IsOverrideFile": false,
+  "NameSpace": "SeaSky.NewTempProject",
+  "NameSpace1": "aaa",
+  "TableName": "tb_",
+  "SonTableList": [
+    "AcademicYear",
+    "Dic"
+  ]
+}
