@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeaSky.NewTempProject.BLL", "BLL\SeaSky.NewTempProject.BLL.csproj", "{12E4D874-904B-4AD2-B908-70905B3AB664}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tomato.NewTempProject.BLL", "BLL\Tomato.NewTempProject.BLL.csproj", "{12E4D874-904B-4AD2-B908-70905B3AB664}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeaSky.NewTempProject.DAL", "DAL\SeaSky.NewTempProject.DAL.csproj", "{A9AB9DF6-C011-47F8-A6CD-36895345A5A7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tomato.NewTempProject.DAL", "DAL\Tomato.NewTempProject.DAL.csproj", "{A9AB9DF6-C011-47F8-A6CD-36895345A5A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeaSky.NewTempProject.Model", "Model\SeaSky.NewTempProject.Model.csproj", "{BAAE53E8-704F-4D07-982C-B20AC06AB83F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tomato.NewTempProject.Model", "Model\Tomato.NewTempProject.Model.csproj", "{BAAE53E8-704F-4D07-982C-B20AC06AB83F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeaSky.NewTempProject.WebApi", "WebApi\SeaSky.NewTempProject.WebApi.csproj", "{0B1D9A19-22F1-4506-AEEC-EF24507778AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tomato.NewTempProject.WebApi", "WebApi\Tomato.NewTempProject.WebApi.csproj", "{0B1D9A19-22F1-4506-AEEC-EF24507778AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeaSky.NewTempProject.Test", "SeaSky.NewTempProject.Test\SeaSky.NewTempProject.Test.csproj", "{6C9D8678-2956-472F-9AFB-05B029302A95}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tomato.NewTempProject.Test", "Tomato.NewTempProject.Test\Tomato.NewTempProject.Test.csproj", "{6C9D8678-2956-472F-9AFB-05B029302A95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tomato.StandardLib.FrameWork", "Tomato.StandardLib.FrameWork\Tomato.StandardLib.FrameWork.csproj", "{A50D38AF-B00E-4620-91CB-CF70519813E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{6C9D8678-2956-472F-9AFB-05B029302A95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C9D8678-2956-472F-9AFB-05B029302A95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C9D8678-2956-472F-9AFB-05B029302A95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A50D38AF-B00E-4620-91CB-CF70519813E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A50D38AF-B00E-4620-91CB-CF70519813E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A50D38AF-B00E-4620-91CB-CF70519813E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A50D38AF-B00E-4620-91CB-CF70519813E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

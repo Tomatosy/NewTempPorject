@@ -1,0 +1,879 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tomato.NewTempProject.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:Tomato.NewTempProject.WebApi.SwaggerControllerDescProvider">
+            <summary>
+            显示swagger控制器的描述
+            </summary>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.SwaggerControllerDescProvider.#ctor(Swashbuckle.Swagger.ISwaggerProvider,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="swaggerProvider"></param>
+            <param name="xml">xml文档路径</param>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.SwaggerControllerDescProvider.GetControllerDesc">
+            <summary>
+            从API文档中读取控制器描述
+            </summary>
+            <returns>所有控制器描述</returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Generates an URI-friendly ID for the <see cref="T:System.Web.Http.Description.ApiDescription"/>. E.g. "Get-Values-id_name" instead of "GetValues/{id}?name={name}"
+            </summary>
+            <param name="description">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The ID as a string.</returns>
+        </member>
+        <member name="T:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageConfig">
+            <summary>
+            Use this class to customize the Help Page.
+            For example you can set a custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> to supply the documentation
+            or you can provide the samples for the requests/responses.
+            </summary>
+        </member>
+        <member name="T:Tomato.NewTempProject.WebApi.Areas.HelpPage.Controllers.HelpController">
+            <summary>
+            The controller that will handle requests for the help page.
+            </summary>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetDocumentationProvider(System.Web.Http.HttpConfiguration,System.Web.Http.Description.IDocumentationProvider)">
+            <summary>
+            Sets the documentation provider for help page.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="documentationProvider">The documentation provider.</param>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleObjects(System.Web.Http.HttpConfiguration,System.Collections.Generic.IDictionary{System.Type,System.Object})">
+            <summary>
+            Sets the objects that will be used by the formatters to produce sample requests/responses.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleObjects">The sample objects.</param>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type and action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample request directly for the specified media type and action with parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type of the action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample response directly for the specified media type of the action with specific parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Sets the sample directly for all actions with the specified type and media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The parameter type or return type of an action.</param>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action. 
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action. 
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action. 
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action. 
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <returns>The help page sample generator.</returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration,Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleGenerator)">
+            <summary>
+            Sets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleGenerator">The help page sample generator.</param>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageApiModel(System.Web.Http.HttpConfiguration,System.String)">
+            <summary>
+            Gets the model that represents an API displayed on the help page. The model is initialized on the first call and cached for subsequent calls.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="apiDescriptionId">The <see cref="T:System.Web.Http.Description.ApiDescription"/> ID.</param>
+            <returns>
+            An <see cref="T:Tomato.NewTempProject.WebApi.Areas.HelpPage.Models.HelpPageApiModel"/>
+            </returns>
+        </member>
+        <member name="T:Tomato.NewTempProject.WebApi.Areas.HelpPage.Models.HelpPageApiModel">
+            <summary>
+            The model that represents an API displayed on the help page.
+            </summary>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.Models.HelpPageApiModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tomato.NewTempProject.WebApi.Areas.HelpPage.Models.HelpPageApiModel"/> class.
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.WebApi.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription">
+            <summary>
+            Gets or sets the <see cref="P:Tomato.NewTempProject.WebApi.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription"/> that describes the API.
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.WebApi.Areas.HelpPage.Models.HelpPageApiModel.SampleRequests">
+            <summary>
+            Gets the sample requests associated with the API.
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.WebApi.Areas.HelpPage.Models.HelpPageApiModel.SampleResponses">
+            <summary>
+            Gets the sample responses associated with the API.
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.WebApi.Areas.HelpPage.Models.HelpPageApiModel.ErrorMessages">
+            <summary>
+            Gets the error messages associated with this model.
+            </summary>
+        </member>
+        <member name="T:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleGenerator">
+            <summary>
+            This class will generate the samples for the help page.
+            </summary>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleGenerator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleGenerator"/> class.
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleGenerator.ActualHttpMessageTypes">
+            <summary>
+            Gets CLR types that are used as the content of <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/>.
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples">
+            <summary>
+            Gets the objects that are used directly as samples for certain actions.
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects">
+            <summary>
+            Gets the objects that are serialized as samples by the supported formatters.
+            </summary>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleGenerator.GetSampleRequests(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the request body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleGenerator.GetSampleResponses(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the response body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleGenerator.GetSample(System.Web.Http.Description.ApiDescription,Tomato.NewTempProject.WebApi.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Gets the request or response body samples.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleGenerator.GetActionSample(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Type,System.Net.Http.Formatting.MediaTypeFormatter,System.Net.Http.Headers.MediaTypeHeaderValue,Tomato.NewTempProject.WebApi.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Search for samples that are provided directly through <see cref="P:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples"/>.
+            </summary>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="type">The CLR type.</param>
+            <param name="formatter">The formatter.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The sample that matches the parameters.</returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleGenerator.GetSampleObject(System.Type)">
+            <summary>
+            Gets the sample object that will be serialized by the formatters. 
+            First, it will look at the <see cref="P:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects"/>. If no sample object is found, it will try to create one using <see cref="T:Tomato.NewTempProject.WebApi.Areas.HelpPage.ObjectGenerator"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The sample object.</returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleGenerator.ResolveType(System.Web.Http.Description.ApiDescription,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},Tomato.NewTempProject.WebApi.Areas.HelpPage.SampleDirection,System.Collections.ObjectModel.Collection{System.Net.Http.Formatting.MediaTypeFormatter}@)">
+            <summary>
+            Resolves the type of the action parameter or return value when <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/> is used.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or a response.</param>
+            <param name="formatters">The formatters.</param>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleGenerator.WriteSampleObjectUsingFormatter(System.Net.Http.Formatting.MediaTypeFormatter,System.Object,System.Type,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Writes the sample object using formatter.
+            </summary>
+            <param name="formatter">The formatter.</param>
+            <param name="value">The value.</param>
+            <param name="type">The type.</param>
+            <param name="mediaType">Type of the media.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleKey">
+            <summary>
+            This is used to identify the place where the sample should be applied.
+            </summary>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Creates a new <see cref="T:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleKey"/> based on media type and CLR type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The CLR type.</param>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleKey.#ctor(Tomato.NewTempProject.WebApi.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleKey"/> based on <see cref="P:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="sampleDirection">The <see cref="P:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,Tomato.NewTempProject.WebApi.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleKey"/> based on media type, <see cref="P:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The <see cref="P:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="P:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleKey.ControllerName">
+            <summary>
+            Gets the name of the controller.
+            </summary>
+            <value>
+            The name of the controller.
+            </value>
+        </member>
+        <member name="P:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleKey.ActionName">
+            <summary>
+            Gets the name of the action.
+            </summary>
+            <value>
+            The name of the action.
+            </value>
+        </member>
+        <member name="P:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleKey.MediaType">
+            <summary>
+            Gets the media type.
+            </summary>
+            <value>
+            The media type.
+            </value>
+        </member>
+        <member name="P:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleKey.ParameterNames">
+            <summary>
+            Gets the parameter names.
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection">
+            <summary>
+            Gets the <see cref="P:Tomato.NewTempProject.WebApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.
+            </summary>
+        </member>
+        <member name="T:Tomato.NewTempProject.WebApi.Areas.HelpPage.ImageSample">
+            <summary>
+            This represents an image sample on the help page. There's a display template named ImageSample associated with this class.
+            </summary>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.ImageSample.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tomato.NewTempProject.WebApi.Areas.HelpPage.ImageSample"/> class.
+            </summary>
+            <param name="src">The URL of an image.</param>
+        </member>
+        <member name="T:Tomato.NewTempProject.WebApi.Areas.HelpPage.InvalidSample">
+            <summary>
+            This represents an invalid sample on the help page. There's a display template named InvalidSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:Tomato.NewTempProject.WebApi.Areas.HelpPage.ObjectGenerator">
+            <summary>
+            This class will create an object of a given type and populate it with sample data.
+            </summary>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)">
+            <summary>
+            Generates an object for a given type. The type needs to be public, have a public default constructor and settable public properties/fields. Currently it supports the following types:
+            Simple types: <see cref="T:System.Int32"/>, <see cref="T:System.String"/>, <see cref="T:System.Enum"/>, <see cref="T:System.DateTime"/>, <see cref="T:System.Uri"/>, etc.
+            Complex types: POCO types.
+            Nullables: <see cref="T:System.Nullable`1"/>.
+            Arrays: arrays of simple types or complex types.
+            Key value pairs: <see cref="T:System.Collections.Generic.KeyValuePair`2"/>
+            Tuples: <see cref="T:System.Tuple`1"/>, <see cref="T:System.Tuple`2"/>, etc
+            Dictionaries: <see cref="T:System.Collections.Generic.IDictionary`2"/> or anything deriving from <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            Collections: <see cref="T:System.Collections.Generic.IList`1"/>, <see cref="T:System.Collections.Generic.IEnumerable`1"/>, <see cref="T:System.Collections.Generic.ICollection`1"/>, <see cref="T:System.Collections.IList"/>, <see cref="T:System.Collections.IEnumerable"/>, <see cref="T:System.Collections.ICollection"/> or anything deriving from <see cref="T:System.Collections.Generic.ICollection`1"/> or <see cref="T:System.Collections.IList"/>.
+            Queryables: <see cref="T:System.Linq.IQueryable"/>, <see cref="T:System.Linq.IQueryable`1"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>An object of the given type.</returns>
+        </member>
+        <member name="T:Tomato.NewTempProject.WebApi.Areas.HelpPage.SampleDirection">
+            <summary>
+            Indicates whether the sample is used for request or response
+            </summary>
+        </member>
+        <member name="T:Tomato.NewTempProject.WebApi.Areas.HelpPage.TextSample">
+            <summary>
+            This represents a preformatted text sample on the help page. There's a display template named TextSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:Tomato.NewTempProject.WebApi.Areas.HelpPage.XmlDocumentationProvider">
+            <summary>
+            A custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> that reads the API documentation from an XML documentation file.
+            </summary>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Areas.HelpPage.XmlDocumentationProvider.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tomato.NewTempProject.WebApi.Areas.HelpPage.XmlDocumentationProvider"/> class.
+            </summary>
+            <param name="documentPath">The physical path to XML document.</param>
+        </member>
+        <member name="T:Tomato.NewTempProject.WebApi.RequestAuthorizeAttribute">
+            <summary>
+            需要权限
+            </summary>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.RequestAuthorizeAttribute.#ctor">
+            <summary>
+            需要权限
+            </summary>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.RequestAuthorizeAttribute.OnAuthorization(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            验证权限
+            </summary>
+            <param name="actionContext"></param>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.RequestAuthorizeAttribute.HandleUnauthorizedRequest(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            处理异常
+            </summary>
+            <param name="actionContext"></param>
+        </member>
+        <member name="T:Tomato.NewTempProject.WebApi.RequestLoginAttribute">
+            <summary>
+            需要登入
+            </summary>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.RequestLoginAttribute.#ctor">
+            <summary>
+            需要登入
+            </summary>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.RequestLoginAttribute.OnAuthorization(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            验证权限
+            </summary>
+            <param name="actionContext"></param>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.RequestLoginAttribute.HandleUnauthorizedRequest(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            处理异常
+            </summary>
+            <param name="actionContext"></param>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Common.CrosHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+            <summary>
+            异步发送 HTTP 请求到要发送到服务器的内部处理程序
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Common.HTTPHelper.PostRequest(System.String,Tomato.NewTempProject.WebApi.Common.DataTypeEnum,System.String)">
+            <summary>
+            Post带参请求
+            </summary>
+            <param name="url"></param>
+            <param name="method"></param>
+            <param name="ContentType">指定参数类型</param>
+            <param name="strData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Common.HTTPHelper.GetRequest(System.String)">
+            <summary>
+            Get不带参请求
+            </summary>
+            <param name="url"></param>
+            <param name="method"></param>
+            <param name="ContentType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tomato.NewTempProject.WebApi.Common.DataTypeEnum">
+            <summary>
+            带参数据类型
+            </summary>
+        </member>
+        <member name="T:Tomato.NewTempProject.WebApi.Common.MethodTypeEnum">
+            <summary>
+            带参数据类型
+            </summary>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Controllers.UploadController.WordReplace(System.String,System.String)">
+            <summary>
+            替换word模板
+            </summary>
+            <param name="model">ViewModel</param>
+            <returns>ViewModel</returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Controllers.UploadController.OfficeAction(Tomato.NewTempProject.Model.AcademicYearViewModel)">
+            <summary>
+            操作office
+            </summary>
+            <param name="ID">ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Controllers.UploadController.WordToPDF(System.String,System.String)">
+            <summary>
+            word转pdf
+            </summary>
+            <param name="wordPath">word路径</param>
+            <param name="pdfPath">pdf路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Controllers.UploadController.ExcelToPDF(System.String,System.String,Microsoft.Office.Interop.Excel.XlFixedFormatType)">
+            <summary>
+            Excel转Pdf
+            </summary>
+            <param name="sourcePath">word路径</param>
+            <param name="targetPath">pdf路径</param>
+            <param name="targetType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Controllers.AcademicYearController.ListViewPageAcademicYear(Tomato.NewTempProject.Model.AcademicYearViewModel)">
+            <summary>
+            获取学年表视图列表分页
+            </summary>
+            <param name="model">ViewModel</param>
+            <returns>ViewModel</returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Controllers.AcademicYearController.ListPageAcademicYear(Tomato.NewTempProject.Model.AcademicYearInputModel)">
+            <summary>
+            获取学年表列表分页
+            </summary>
+            <param name="model">InputModel</param>
+            <returns>OutputModel</returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Controllers.AcademicYearController.ModifyAcademicYear(Tomato.NewTempProject.Model.AcademicYearInputModel)">
+            <summary>
+            新增、修改学年表
+            </summary>
+            <param name="model">OutputModel</param>
+            <returns>OutputModel</returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Controllers.AcademicYearController.DeleteAcademicYear(System.Collections.Generic.List{System.Nullable{System.Guid}})">
+            <summary>
+            删除学年表 (逻辑删除)
+            </summary>
+            <param name="IDs">List-->Guid?</param>
+            <returns>受影响行数</returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Controllers.AcademicYearController.GetAcademicYear(System.Nullable{System.Guid})">
+            <summary>
+            获取单个学年表
+            </summary>
+            <param name="ID">Guid?</param>
+            <returns>ViewModel</returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Controllers.AuthController.ListViewPageAuth(Tomato.NewTempProject.Model.AuthViewModel)">
+            <summary>
+            获取用户权限表视图列表分页
+            </summary>
+            <param name="model">ViewModel</param>
+            <returns>ViewModel</returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Controllers.AuthController.ListPageAuth(Tomato.NewTempProject.Model.AuthInputModel)">
+            <summary>
+            获取用户权限表列表分页
+            </summary>
+            <param name="model">InputModel</param>
+            <returns>OutputModel</returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Controllers.AuthController.ModifyAuth(Tomato.NewTempProject.Model.AuthInputModel)">
+            <summary>
+            新增、修改用户权限表
+            </summary>
+            <param name="model">OutputModel</param>
+            <returns>OutputModel</returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Controllers.AuthController.DeleteAuth(System.Collections.Generic.List{System.Nullable{System.Guid}})">
+            <summary>
+            删除用户权限表 (逻辑删除)
+            </summary>
+            <param name="IDs">List-->Guid?</param>
+            <returns>受影响行数</returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Controllers.AuthController.GetAuth(System.Nullable{System.Guid})">
+            <summary>
+            获取单个用户权限表
+            </summary>
+            <param name="ID">Guid?</param>
+            <returns>ViewModel</returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Controllers.DicController.ListViewPageDic(Tomato.NewTempProject.Model.DicViewModel)">
+            <summary>
+            获取数据字典表视图列表分页
+            </summary>
+            <param name="model">ViewModel</param>
+            <returns>ViewModel</returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Controllers.DicController.ListPageDic(Tomato.NewTempProject.Model.DicInputModel)">
+            <summary>
+            获取数据字典表列表分页
+            </summary>
+            <param name="model">InputModel</param>
+            <returns>OutputModel</returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Controllers.DicController.ModifyDic(Tomato.NewTempProject.Model.DicInputModel)">
+            <summary>
+            新增、修改数据字典表
+            </summary>
+            <param name="model">OutputModel</param>
+            <returns>OutputModel</returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Controllers.DicController.DeleteDic(System.Collections.Generic.List{System.Nullable{System.Guid}})">
+            <summary>
+            删除数据字典表 (逻辑删除)
+            </summary>
+            <param name="IDs">List-->Guid?</param>
+            <returns>受影响行数</returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Controllers.DicController.GetDic(System.Nullable{System.Guid})">
+            <summary>
+            获取单个数据字典表
+            </summary>
+            <param name="ID">Guid?</param>
+            <returns>ViewModel</returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Log.LogAttribute.SkipLogging(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            判断控制器和Action是否要进行拦截
+            </summary>
+            <param name="actionContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Log.LogAttribute.SkipLogging(System.Web.Http.Filters.HttpActionExecutedContext)">
+            <summary>
+            判断控制器和Action是否要进行拦截
+            </summary>
+            <param name="actionContext"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tomato.NewTempProject.WebApi.Log.NoLogAttribute">
+            <summary>
+            不需要日志记录的过滤器
+            </summary>
+        </member>
+        <!-- 对于成员“M:Tomato.SumhsAuditPreWarning.WebApi.ExcelHelper.Serialize(System.Object)”忽略有格式错误的 XML 注释 -->
+        <member name="M:Tomato.SumhsAuditPreWarning.WebApi.ExcelHelper.ListToExcel``1(System.Collections.Generic.IList{``0},System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            List对象导出Excel至浏览器下载
+            </summary>
+            <param name="list">泛型集合类</param>
+            <param name="fileName">生成的Excel文件名</param>
+            <param name="propertyName">Excel的字段列表</param>
+        </member>
+        <member name="M:Tomato.SumhsAuditPreWarning.WebApi.ExcelHelper.ListToExcel(System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
+            <summary>
+            导出表头
+            </summary>
+        </member>
+        <member name="M:Tomato.SumhsAuditPreWarning.WebApi.ExcelHelper.ListToExcelSaveServer``1(System.Collections.Generic.IList{``0},System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            List对象导出Excel至服务器
+            </summary>
+            <param name="list">泛型集合类</param>
+            <param name="fileName">生成的Excel文件名</param>
+            <param name="propertyName">Excel的字段列表</param>
+        </member>
+        <member name="M:Tomato.SumhsAuditPreWarning.WebApi.ExcelHelper.ListToExcel``1(System.Collections.Generic.IList{``0},System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
+            <summary>
+            List对象转流
+            </summary>
+            <typeparam name="T">对象</typeparam>
+            <param name="list">List对象</param>
+            <param name="propertyNameList">表头属性</param>
+            <param name="fileName">文件名</param>
+            <returns>Excel文件流</returns>
+        </member>
+        <member name="M:Tomato.SumhsAuditPreWarning.WebApi.ExcelHelper.ExcelToDataTable(System.Web.HttpPostedFile,System.String)">
+            <summary>
+            将Excel文件流导入到DataTable中
+            </summary>
+            <param name="file">指定Excel流文件访问权限</param>
+            <param name="sheetName">Excel工作薄sheet的名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tomato.SumhsAuditPreWarning.WebApi.ExcelHelper.ExcelToList``1(System.Web.HttpPostedFile,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            将Excel文件流导入到List中
+            </summary>
+            <param name="file">指定Excel流文件访问权限</param>
+            <param name="sheetName">Excel工作薄sheet的名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tomato.SumhsAuditPreWarning.WebApi.ExcelHelper.GetModelValue(System.String,System.Object)">
+            <summary>
+            遍历对象中的属性取值（ListToExcel）
+            </summary>
+            <param name="item">属性路径</param>
+            <param name="model">对象</param>
+            <returns>返回对应属性值</returns>
+        </member>
+        <member name="M:Tomato.SumhsAuditPreWarning.WebApi.ExcelHelper.StringToOtherType(System.String,System.Reflection.PropertyInfo,System.Object)">
+            <summary>
+            反射属性值类型转换（ExcelToList）
+            </summary>
+            <param name="value">值</param>
+            <param name="model">属性对象</param>
+            <param name="obj">绑定值</param>
+        </member>
+        <member name="M:Tomato.SumhsAuditPreWarning.WebApi.ExcelHelper.SetModelValue(System.String,System.Collections.Generic.List{System.Reflection.PropertyInfo},System.String,System.Object)">
+            <summary>
+            遍历对象中的属性赋值（ExcelToList）
+            </summary>
+            <param name="modelPropertyNames"></param>
+            <param name="propertys"></param>
+            <param name="itemValue"></param>
+            <param name="dataRow"></param>
+        </member>
+        <member name="M:Tomato.SumhsAuditPreWarning.WebApi.Common.NopiExcel.ExcelToTable(System.IO.Stream,System.String,System.Int32,System.Int32)">
+            <summary>
+            excel导入成DataTable
+            </summary>
+            <param name="ExcelFileStream">文件流</param>
+            <param name="SheetIndex">开始的sheet</param>
+            <param name="HeaderRowIndex">从第行开始读取</param>
+            <param name="fileExt">文件名，带.</param>
+            <returns>返回DataTable</returns>
+        </member>
+        <member name="M:Tomato.SumhsAuditPreWarning.WebApi.Common.NopiExcel.ExcelToTable(System.Web.HttpPostedFile,System.Int32,System.Int32,System.String)">
+            <summary>
+            excel导入成DataTable
+            </summary>
+            <param name="ExcelFileStream">文件流</param>
+            <param name="SheetIndex">开始的sheet</param>
+            <param name="HeaderRowIndex">从第行开始读取</param>
+            <param name="fileExt">文件名，带.</param>
+            <returns>返回DataTable</returns>
+        </member>
+        <member name="M:Tomato.SumhsAuditPreWarning.WebApi.Common.NopiExcel.StreamFromDataTable(System.Data.DataTable,System.String)">
+            <summary>
+            DataTable转Excel转流
+            </summary>
+            <param name="dt"></param>
+            <param name="file">.xls,.xlsx</param>
+        </member>
+        <member name="M:Tomato.SumhsAuditPreWarning.WebApi.Common.NopiExcel.GetValueType(NPOI.SS.UserModel.ICell)">
+            <summary>
+            获取单元格类型
+            </summary>
+            <param name="cell"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tomato.SumhsAuditPreWarning.WebApi.Common.NopiExcel.ExcelToDataTable(System.String,System.String,System.Boolean)">
+            <summary>
+            通过文件路径转为DataTable
+            </summary>
+            <param name="filePath">文件路径</param>
+            <param name="sheetName">设置文件名称</param>
+            <param name="isFirstRowColumn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tomato.SumhsAuditPreWarning.WebApi.Common.NopiExcel.WriteSteamToFile(System.IO.MemoryStream,System.String)">
+            <summary>
+            流转文件
+            </summary>
+            <param name="ms"></param>
+            <param name="FileName"></param>
+        </member>
+        <member name="M:Tomato.SumhsAuditPreWarning.WebApi.Common.NopiExcel.WriteSteamToFile(System.Byte[],System.String)">
+            <summary>
+            字节   转文件
+            </summary>
+            <param name="data"></param>
+            <param name="FileName"></param>
+        </member>
+        <member name="M:Tomato.SumhsAuditPreWarning.WebApi.Common.NopiExcel.WorkBookToStream(NPOI.HSSF.UserModel.HSSFWorkbook)">
+            <summary>
+            HSSFWorkbook     -->Stream 
+            </summary>
+            <param name="InputWorkBook"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tomato.SumhsAuditPreWarning.WebApi.Common.NopiExcel.StreamToWorkBook(System.IO.Stream)">
+            <summary>
+            Stream    -->HSSFWorkbook
+            </summary>
+            <param name="InputStream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tomato.SumhsAuditPreWarning.WebApi.Common.NopiExcel.MemoryStreamToWorkBook(System.IO.MemoryStream)">
+            <summary>
+            MemoryStream    -->HSSFWorkbook
+            </summary>
+            <param name="InputStream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tomato.SumhsAuditPreWarning.WebApi.Common.NopiExcel.WorkBookToMemoryStream(NPOI.HSSF.UserModel.HSSFWorkbook)">
+            <summary>
+            HSSFWorkbook    -->MemoryStream
+            </summary>
+            <param name="InputStream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tomato.SumhsAuditPreWarning.WebApi.Common.NopiExcel.FileToStream(System.String)">
+            <summary>
+            File   -->   Stream
+            </summary>
+            <param name="FileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tomato.SumhsAuditPreWarning.WebApi.Common.NopiExcel.MemoryStreamToStream(System.IO.MemoryStream)">
+            <summary>
+            MemoryStream   -->   Stream
+            </summary>
+            <param name="ms"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tomato.SumhsAuditPreWarning.WebApi.Common.NopiExcel.StreamToMemoryStream(System.IO.Stream)">
+            <summary>
+            Stream   -->   MemoryStream
+            </summary>
+            <param name="instream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PdfConverHelper.ConverToPdf(System.String,System.String)">
+            <summary>
+            转pdf
+            </summary>
+            <param name="inputPath">word路径</param>
+            <param name="pdfPath">pdf路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:SeaSky.SumhsAuditPreWarning.WebApi.Common.DataTableHelper.ToDataTable``1(System.Collections.Generic.List{``0})">
+            <summary>
+            将list转换为datatable
+            </summary>
+        </member>
+        <member name="M:SeaSky.SumhsAuditPreWarning.WebApi.Common.DataTableHelper.IsNullable(System.Type)">
+            <summary>
+            Determine of specified type is nullable
+            </summary>
+        </member>
+        <member name="M:SeaSky.SumhsAuditPreWarning.WebApi.Common.DataTableHelper.GetCoreType(System.Type)">
+            <summary>
+            Return underlying type if type is Nullable otherwise return the type
+            </summary>
+        </member>
+        <member name="M:WordTemplateHelper.WriteToPublicationOfResult(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            NPOI操作word
+            </summary>
+            <param name="TemplatePath">模板路径</param>
+            <param name="SavePath">保存路径</param>
+            <param name="keywords">关键字集合</param>
+        </member>
+        <member name="M:WordTemplateHelper.ReplaceKeyWords(System.Collections.Generic.IList{NPOI.XWPF.UserModel.XWPFParagraph},System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            遍历段落，替换关键字
+            </summary>
+            <param name="Paragraphs">段落</param>
+            <param name="keywords">关键字集合</param>
+        </member>
+        <member name="M:WordTemplateHelper.getProperties``1(``0)">
+            <summary>
+            格式化关键字集合
+            </summary>
+            <typeparam name="T">泛型对象</typeparam>
+            <param name="t">关键字集对象</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

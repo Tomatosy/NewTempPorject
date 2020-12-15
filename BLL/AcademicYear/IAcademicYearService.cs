@@ -1,9 +1,9 @@
-﻿namespace SeaSky.NewTempProject.BLL
+﻿namespace Tomato.NewTempProject.BLL
 {
     using System;
     using System.Collections.Generic;
-    using SeaSky.StandardLib.MyModel;
-using SeaSky.NewTempProject.Model;
+    using Tomato.StandardLib.MyModel;
+using Tomato.NewTempProject.Model;
 
     public interface IAcademicYearService 
     {

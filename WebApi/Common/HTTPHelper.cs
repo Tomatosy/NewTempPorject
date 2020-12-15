@@ -6,7 +6,7 @@ using System.Net;
 using System.Text;
 using System.Web;
 
-namespace SeaSky.NewTempProject.WebApi.Common
+namespace Tomato.NewTempProject.WebApi.Common
 {
     public class HTTPHelper
     {

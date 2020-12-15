@@ -71,7 +71,7 @@ using <#=            _myConfig.NameSpace#>.BLL;
         [TestMethod]
         public void ListViewPage<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>_Test()
         {
-            <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ViewModel testModel = null;
+            <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ViewModel testModel = new <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ViewModel();
             BaseResultModel<PageModel<<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ViewModel>> result = <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Service.ListViewPage<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>(testModel);
             Assert.IsTrue(result.IsSuccess && result.Data.DataCount > 0, result.ErrorMessage);
 
@@ -81,7 +81,7 @@ using <#=            _myConfig.NameSpace#>.BLL;
                 PageSize = 2,
 <#+            foreach(DbColumn column in _model.DbColumns){
                 if(!column.IsNullable){
-                    if(column.ColumnNameAlias.Trim().ToLower().Contains("isdelete")||column.ColumnNameAlias.Trim().Trim().ToLower()==_model.TablePrimarkeyName.Trim().ToLower()){
+                    if(column.ColumnNameAlias.Trim().ToLower().Contains("isdelete")||column.ColumnNameAlias.Trim().Trim().ToLower()==_model.TablePrimarkeyName?.Trim()?.ToLower()){
                         continue;
                     }
                     if(column.CSharpType.ToLower().Contains("guid"))
@@ -106,7 +106,7 @@ using <#=            _myConfig.NameSpace#>.BLL;
         [TestMethod]
         public void ListPage<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>_Test()
         {
-            <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>InputModel testModel = null;
+            <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>InputModel testModel = new <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>InputModel();
             BaseResultModel<PageModel<<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>OutputModel>> result = <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Service.ListPage<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>(testModel);
             Assert.IsTrue(result.IsSuccess && result.Data.DataCount > 0, result.ErrorMessage);
 

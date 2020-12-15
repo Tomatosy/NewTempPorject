@@ -1,4 +1,4 @@
-﻿using SeaSky.NewTempProject.BLL;
+﻿using Tomato.NewTempProject.BLL;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -6,7 +6,7 @@ using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
 using TGLog;
 
-namespace SeaSky.NewTempProject.WebApi.Log
+namespace Tomato.NewTempProject.WebApi.Log
 {
     public class LogAttribute : ActionFilterAttribute
     {

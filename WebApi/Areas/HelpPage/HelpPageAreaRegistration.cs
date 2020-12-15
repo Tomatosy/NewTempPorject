@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace SeaSky.NewTempProject.WebApi.Areas.HelpPage
+namespace Tomato.NewTempProject.WebApi.Areas.HelpPage
 {
     public class HelpPageAreaRegistration : AreaRegistration
     {

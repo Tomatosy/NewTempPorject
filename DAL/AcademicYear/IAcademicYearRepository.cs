@@ -1,13 +1,13 @@
-﻿namespace SeaSky.NewTempProject.DAL
+﻿namespace Tomato.NewTempProject.DAL
 {
    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SeaSky.StandardLib.MyBaseClass;
-using SeaSky.StandardLib.MyModel;
-using SeaSky.NewTempProject.Model;
+using Tomato.StandardLib.MyBaseClass;
+using Tomato.StandardLib.MyModel;
+using Tomato.NewTempProject.Model;
 
     public interface IAcademicYearRepository : IDALBaseNew<AcademicYearModel, AcademicYearOutputModel, AcademicYearViewModel>, IDALPageBaseNew<AcademicYearModel, AcademicYearOutputModel, AcademicYearViewModel>
     {

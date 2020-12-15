@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json.Serialization;
-using SeaSky.NewTempProject.WebApi.Common;
-using SeaSky.NewTempProject.WebApi.Log;
+using Tomato.NewTempProject.WebApi.Common;
+using Tomato.NewTempProject.WebApi.Log;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +26,7 @@ namespace WebApi
 
 #if DEBUG
             config.Routes.MapHttpRoute(
-                name: "DefaultApi",
+                name: "DefaultApiTomato",
                 routeTemplate: "NewTempProject/{controller}/{action}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );

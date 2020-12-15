@@ -13,7 +13,7 @@ using System.Web.Http.Description;
 using System.Xml.Linq;
 using Newtonsoft.Json;
 
-namespace SeaSky.NewTempProject.WebApi.Areas.HelpPage
+namespace Tomato.NewTempProject.WebApi.Areas.HelpPage
 {
     /// <summary>
     /// This class will generate the samples for the help page.

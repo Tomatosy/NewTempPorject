@@ -69,7 +69,7 @@ namespace <#=        _myConfig.NameSpace #>
         ///<#=column.Remark#>
         ///</summary>
        <#+if(GetIsRequired(column)){ #> [RequiredAll(ErrorMessage = "<#=column.Remark#>不能为空")]<#+}#>
-       <#+if(column.CSharpType!=null&&column.CSharpType=="string"&&column.CharLength!=-1){ #> [StringLength(<#=column.CharLength#>,ErrorMessage = "<#=column.Remark#>长度不能超过<#=column.CharLength#>")]<#+}#>
+       <#+if(column.CSharpType!=null&&column.CSharpType=="string"&&column.CharLength!=-1){ #> [StringLength(<#=column.CharLength#>,ErrorMessage = "<#=column.Remark#>长度不能超过<#=column.CharLength#>个字符")]<#+}#>
 
         public <#=column.CSharpType#><#=GetIsNull(column)#> <#=column.ColumnNameAlias#>
         {

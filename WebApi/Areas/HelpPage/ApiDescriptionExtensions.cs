@@ -3,7 +3,7 @@ using System.Text;
 using System.Web;
 using System.Web.Http.Description;
 
-namespace SeaSky.NewTempProject.WebApi.Areas.HelpPage
+namespace Tomato.NewTempProject.WebApi.Areas.HelpPage
 {
     public static class ApiDescriptionExtensions
     {

@@ -1,9 +1,9 @@
-﻿using SeaSky.NewTempProject.Model.Enum;
+﻿using Tomato.NewTempProject.Model.Enum;
 using System;
 using System.Web;
 using TGLog;
 
-namespace SeaSky.NewTempProject.BLL
+namespace Tomato.NewTempProject.BLL
 {
     public class LogWriter
     {

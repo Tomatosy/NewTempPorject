@@ -1,12 +1,12 @@
-﻿using SeaSky.NewTempProject.Model;
+﻿using Tomato.NewTempProject.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SeaSky.StandardLib.MyModel;
+using Tomato.StandardLib.MyModel;
 
-namespace SeaSky.NewTempProject.BLL
+namespace Tomato.NewTempProject.BLL
 {
     public interface ITestService
     {

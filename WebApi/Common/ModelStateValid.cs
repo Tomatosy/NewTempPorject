@@ -1,11 +1,11 @@
-﻿using SeaSky.StandardLib.MyModel;
+﻿using Tomato.StandardLib.MyModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
 
-namespace SeaSky.NewTempProject.WebApi.Common
+namespace Tomato.NewTempProject.WebApi.Common
 {
     public static class ModelStateValid
     {

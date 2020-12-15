@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace SeaSky.NewTempProject.WebApi.Log
+namespace Tomato.NewTempProject.WebApi.Log
 {
     /// <summary>
     /// 不需要日志记录的过滤器

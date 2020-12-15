@@ -5,7 +5,7 @@ using System.Web;
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
 
-namespace SeaSky.NewTempProject.BLL
+namespace Tomato.NewTempProject.BLL
 {
     public class ApplicationContext : IDisposable
     {

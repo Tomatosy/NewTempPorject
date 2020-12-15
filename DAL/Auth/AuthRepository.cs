@@ -1,19 +1,19 @@
-﻿namespace SeaSky.NewTempProject.DAL
+﻿namespace Tomato.NewTempProject.DAL
 {
 using Microsoft.Practices.Unity;
-using SeaSky.StandardLib.MyBaseClass;
+using Tomato.StandardLib.MyBaseClass;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SeaSky.StandardLib.DAL.Base;
+using Tomato.StandardLib.DAL.Base;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Data.Common;
-using SeaSky.StandardLib.MyModel;
-using SeaSky.NewTempProject.Model;
+using Tomato.StandardLib.MyModel;
+using Tomato.NewTempProject.Model;
 
     public class AuthRepository : DALPageBaseNew<AuthModel,AuthOutputModel, AuthViewModel>, IAuthRepository
     {

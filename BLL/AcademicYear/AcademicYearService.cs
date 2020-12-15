@@ -1,4 +1,4 @@
-﻿namespace SeaSky.NewTempProject.BLL
+﻿namespace Tomato.NewTempProject.BLL
 {
 using System;
 using System.Collections.Generic;
@@ -10,11 +10,11 @@ using System.Web;
 using Microsoft.Practices.Unity;
 using System.Transactions;
 using Newtonsoft.Json;
-using SeaSky.StandardLib.MyModel;
-using SeaSky.NewTempProject.Model;
-using SeaSky.NewTempProject.Model.Enum;
-using SeaSky.NewTempProject.DAL;
-using SeaSky.StandardLib.MyExtensions;
+using Tomato.StandardLib.MyModel;
+using Tomato.NewTempProject.Model;
+using Tomato.NewTempProject.Model.Enum;
+using Tomato.NewTempProject.DAL;
+using Tomato.StandardLib.MyExtensions;
 
     public class AcademicYearService : IAcademicYearService
     {

@@ -7,9 +7,9 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Description;
-using SeaSky.NewTempProject.WebApi.Areas.HelpPage.Models;
+using Tomato.NewTempProject.WebApi.Areas.HelpPage.Models;
 
-namespace SeaSky.NewTempProject.WebApi.Areas.HelpPage
+namespace Tomato.NewTempProject.WebApi.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

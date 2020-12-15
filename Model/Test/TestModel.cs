@@ -1,15 +1,15 @@
-﻿using SeaSky.StandardLib.MyAttribute;
+﻿using Tomato.StandardLib.MyAttribute;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SeaSky.StandardLib.MyModel;
-using SeaSky.NewTempProject.Model.Enum;
+using Tomato.StandardLib.MyModel;
+using Tomato.NewTempProject.Model.Enum;
 using System.ComponentModel.DataAnnotations;
 
-namespace SeaSky.NewTempProject.Model
+namespace Tomato.NewTempProject.Model
 {
     [DBTableInfo("TestTable")]
     [Serializable]

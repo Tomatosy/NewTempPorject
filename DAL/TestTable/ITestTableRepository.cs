@@ -1,14 +1,14 @@
-﻿using SeaSky.NewTempProject.Model;
-using SeaSky.StandardLib.MyBaseClass;
-using SeaSky.NewTempProject.DAL;
+﻿using Tomato.NewTempProject.Model;
+using Tomato.StandardLib.MyBaseClass;
+using Tomato.NewTempProject.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SeaSky.StandardLib.MyModel;
+using Tomato.StandardLib.MyModel;
 
-namespace SeaSky.NewTempProject.DAL
+namespace Tomato.NewTempProject.DAL
 {
     public interface ITestTableRepository: IDALBase<TestModel,TestOutputModel>, IDALPageBase<TestModel, TestOutputModel>
     {

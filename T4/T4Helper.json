@@ -1,11 +1,31 @@
 ﻿{
-  "ConnectionString": "server=.;database=NewTempProject;uid=sa;pwd=123456",
+  "ConnectionString": "server=.;database=PersonnelPerformance;uid=sa;pwd=123456",
   "IsOverrideFile": false,
-  "NameSpace": "SeaSky.NewTempProject",
+  "NameSpace": "SeaSky.PersonnelPerformance",
   "NameSpace1": "aaa",
   "TableName": "tb_",
   "SonTableList": [
-    "AcademicYear",
-    "Dic"
+"Appraisals",
+"AppraisalsDetailInfo",
+"AppraisalsEmployee",
+"AppraisalsYear",
+"OrgehModulusOption",
+"OrgehOption",
+"OrgehResultDetailInfo",
+"OrgehResultInfo",
+"OrgerLeaderReviewInfo",
+"OrgLeader",
+"PersonReview",
+"PersonReviewDetaillnfo",
+"PersonReviewResultlnfo",
+"Quota",
+"ServiceReviewInfo",
+"Staff360Option",
+"Staff360ResultDetailInfo",
+"Staff360ResultInfo",
+"TeacherBounsInfo",
+"TeacherOrgehRankInfo",
+"TeacherOrgehResultDetailInfo",
+"TeacherOrgehResultlInfo"
   ]
 }

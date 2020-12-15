@@ -1,9 +1,9 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using SeaSky.NewTempProject.WebApi.Areas.HelpPage.Models;
+using Tomato.NewTempProject.WebApi.Areas.HelpPage.Models;
 
-namespace SeaSky.NewTempProject.WebApi.Areas.HelpPage.Controllers
+namespace Tomato.NewTempProject.WebApi.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

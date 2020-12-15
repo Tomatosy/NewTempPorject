@@ -1,4 +1,4 @@
-namespace SeaSky.NewTempProject.WebApi.Areas.HelpPage
+namespace Tomato.NewTempProject.WebApi.Areas.HelpPage
 {
     /// <summary>
     /// Indicates whether the sample is used for request or response

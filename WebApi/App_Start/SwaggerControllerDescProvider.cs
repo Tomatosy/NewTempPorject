@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Xml;
 
-namespace SeaSky.NewTempProject.WebApi
+namespace Tomato.NewTempProject.WebApi
 {
     /// <summary>
     /// 显示swagger控制器的描述

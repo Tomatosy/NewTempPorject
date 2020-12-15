@@ -1,0 +1,238 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tomato.NewTempProject.Model</name>
+    </assembly>
+    <members>
+        <member name="T:Tomato.NewTempProject.Model.AcademicYearInputModel">
+            <summary>
+            学年表输入扩展类
+            </summary>
+        </member>
+        <member name="T:Tomato.NewTempProject.Model.AcademicYearModel">
+            <summary>
+            学年表
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.AcademicYearModel.AcademicYearID">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.AcademicYearModel.AcademicYearName">
+            <summary>
+            学年名称
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.AcademicYearModel.Term">
+            <summary>
+            学期(秋季学期、冬季学期、春季学期、夏季小学期)
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.AcademicYearModel.Status">
+            <summary>
+            学年状态（开启、关闭）
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.AcademicYearModel.InputStatus">
+            <summary>
+            工作量年度维护状态（开启、关闭）【子明细表的对应年度可维护性】
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.AcademicYearModel.FinalActionTime">
+            <summary>
+            最后业务确认期限
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.AcademicYearModel.IsDelete">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.AcademicYearModel._academicYearID">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.AcademicYearModel._academicYearName">
+            <summary>
+            学年名称
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.AcademicYearModel._term">
+            <summary>
+            学期(秋季学期、冬季学期、春季学期、夏季小学期)
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.AcademicYearModel._status">
+            <summary>
+            学年状态（开启、关闭）
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.AcademicYearModel._inputStatus">
+            <summary>
+            工作量年度维护状态（开启、关闭）【子明细表的对应年度可维护性】
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.AcademicYearModel._finalActionTime">
+            <summary>
+            最后业务确认期限
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.AcademicYearModel._isDelete">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="T:Tomato.NewTempProject.Model.AcademicYearOutputModel">
+            <summary>
+            学年表输出扩展类
+            </summary>
+        </member>
+        <member name="T:Tomato.NewTempProject.Model.AcademicYearViewModel">
+            <summary>
+            学年表输出扩展类
+            </summary>
+        </member>
+        <member name="T:Tomato.NewTempProject.Model.AuthInputModel">
+            <summary>
+            用户权限表输入扩展类
+            </summary>
+        </member>
+        <member name="T:Tomato.NewTempProject.Model.AuthModel">
+            <summary>
+            用户权限表
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.AuthModel.AuthID">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.AuthModel.Pernr">
+            <summary>
+            工号
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.AuthModel.Orgeh">
+            <summary>
+            部门ID
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.AuthModel.RoleID">
+            <summary>
+            角色ID（多角色，多行）
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.AuthModel.IsDelete">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.AuthModel._authID">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.AuthModel._pernr">
+            <summary>
+            工号
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.AuthModel._orgeh">
+            <summary>
+            部门ID
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.AuthModel._roleID">
+            <summary>
+            角色ID（多角色，多行）
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.AuthModel._isDelete">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="T:Tomato.NewTempProject.Model.AuthOutputModel">
+            <summary>
+            用户权限表输出扩展类
+            </summary>
+        </member>
+        <member name="T:Tomato.NewTempProject.Model.AuthViewModel">
+            <summary>
+            学年表输出扩展类
+            </summary>
+        </member>
+        <member name="T:Tomato.NewTempProject.Model.DicInputModel">
+            <summary>
+            数据字典表输入扩展类
+            </summary>
+        </member>
+        <member name="T:Tomato.NewTempProject.Model.DicModel">
+            <summary>
+            数据字典表
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.DicModel.DicID">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.DicModel.DicName">
+            <summary>
+            选择组名称
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.DicModel.DicValue">
+            <summary>
+            键
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.DicModel.DicText">
+            <summary>
+            文本
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.DicModel.IsDelete">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.DicModel._dicID">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.DicModel._dicName">
+            <summary>
+            选择组名称
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.DicModel._dicValue">
+            <summary>
+            键
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.DicModel._dicText">
+            <summary>
+            文本
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.DicModel._isDelete">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="T:Tomato.NewTempProject.Model.DicOutputModel">
+            <summary>
+            数据字典表输出扩展类
+            </summary>
+        </member>
+        <member name="T:Tomato.NewTempProject.Model.DicViewModel">
+            <summary>
+            学年表输出扩展类
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SeaSky.NewTempProject.Model
+namespace Tomato.NewTempProject.Model
 {
     public class TestInputModel: TestModel
     {

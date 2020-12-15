@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using SeaSky.StandardLib.MyModel;
-using SeaSky.NewTempProject.BLL;
+using Tomato.StandardLib.MyModel;
+using Tomato.NewTempProject.BLL;
 using System;
 using System.Linq;
 using System.Net;
@@ -13,7 +13,7 @@ using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Security;
 
-namespace SeaSky.NewTempProject.WebApi
+namespace Tomato.NewTempProject.WebApi
 {
     /// <summary>
     /// 需要登入

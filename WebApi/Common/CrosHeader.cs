@@ -7,7 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace SeaSky.NewTempProject.WebApi.Common
+namespace Tomato.NewTempProject.WebApi.Common
 {
     public class CrosHandler : DelegatingHandler
     {

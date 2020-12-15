@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
-using SeaSky.NewTempProject.Model;
-using SeaSky.NewTempProject.DAL;
+using Tomato.NewTempProject.Model;
+using Tomato.NewTempProject.DAL;
 using System.Transactions;
-using SeaSky.NewTempProject.Model.Enum;
-using SeaSky.StandardLib.MyModel;
+using Tomato.NewTempProject.Model.Enum;
+using Tomato.StandardLib.MyModel;
 
-namespace SeaSky.NewTempProject.BLL
+namespace Tomato.NewTempProject.BLL
 {
     public class TestService : ITestService
     {
