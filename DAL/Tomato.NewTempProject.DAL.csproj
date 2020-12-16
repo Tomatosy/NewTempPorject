@@ -52,12 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AcademicYear\AcademicYearRepository.cs" />
-    <Compile Include="AcademicYear\IAcademicYearRepository.cs" />
-    <Compile Include="Auth\AuthRepository.cs" />
-    <Compile Include="Auth\IAuthRepository.cs" />
-    <Compile Include="Dic\DicRepository.cs" />
-    <Compile Include="Dic\IDicRepository.cs" />
+    <Compile Include="ModelDetail\IModelDetailRepository.cs" />
+    <Compile Include="ModelDetail\ModelDetailRepository.cs" />
+    <Compile Include="Model\IModelRepository.cs" />
+    <Compile Include="Model\ModelRepository.cs" />
     <Compile Include="TomatoRepositorySy.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

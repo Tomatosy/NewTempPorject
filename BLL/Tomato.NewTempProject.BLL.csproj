@@ -62,14 +62,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AcademicYear\AcademicYearService.cs" />
-    <Compile Include="AcademicYear\IAcademicYearService.cs" />
-    <Compile Include="ApplicationContext.cs" />
-    <Compile Include="Auth\AuthService.cs" />
-    <Compile Include="Auth\IAuthService.cs" />
-    <Compile Include="Dic\DicService.cs" />
-    <Compile Include="Dic\IDicService.cs" />
-    <Compile Include="LogWriter.cs" />
+    <Compile Include="Units\ApplicationContext.cs" />
+    <Compile Include="Units\DynamicTableHelper.cs" />
+    <Compile Include="Units\LogWriter.cs" />
+    <Compile Include="ModelDetail\IModelDetailService.cs" />
+    <Compile Include="ModelDetail\ModelDetailService.cs" />
+    <Compile Include="Model\IModelService.cs" />
+    <Compile Include="Model\ModelService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TomatoServiceSy.cs">
       <AutoGen>True</AutoGen>

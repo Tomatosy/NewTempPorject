@@ -43,19 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AcademicYear\AcademicYearInputModel.cs" />
-    <Compile Include="AcademicYear\AcademicYearModel.cs" />
-    <Compile Include="AcademicYear\AcademicYearOutputModel.cs" />
-    <Compile Include="AcademicYear\AcademicYearViewModel.cs" />
-    <Compile Include="Auth\AuthInputModel.cs" />
-    <Compile Include="Auth\AuthModel.cs" />
-    <Compile Include="Auth\AuthOutputModel.cs" />
-    <Compile Include="Auth\AuthViewModel.cs" />
-    <Compile Include="Dic\DicInputModel.cs" />
-    <Compile Include="Dic\DicModel.cs" />
-    <Compile Include="Dic\DicOutputModel.cs" />
-    <Compile Include="Dic\DicViewModel.cs" />
     <Compile Include="Enum\EnumLogLevel.cs" />
+    <Compile Include="ModelDetail\ModelDetailInputModel.cs" />
+    <Compile Include="ModelDetail\ModelDetailModel.cs" />
+    <Compile Include="ModelDetail\ModelDetailOutputModel.cs" />
+    <Compile Include="ModelDetail\ModelDetailViewModel.cs" />
+    <Compile Include="Model\ModelInputModel.cs" />
+    <Compile Include="Model\ModelModel.cs" />
+    <Compile Include="Model\ModelOutputModel.cs" />
+    <Compile Include="Model\ModelViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TomatoModelSy.cs">
       <AutoGen>True</AutoGen>
@@ -65,6 +61,10 @@
     <Compile Include="Test\TestInputModel.cs" />
     <Compile Include="Test\TestModel.cs" />
     <Compile Include="Test\TestOutputModel.cs" />
+    <Compile Include="UntiModel\ResultModel.cs" />
+    <Compile Include="UntiModel\TableColSelModel.cs" />
+    <Compile Include="UntiModel\TableSelModel.cs" />
+    <Compile Include="UntiModel\TreeModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="TomatoModelSy.tt">

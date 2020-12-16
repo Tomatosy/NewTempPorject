@@ -217,20 +217,25 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Authentication\RequestAuthorizeAttribute.cs" />
     <Compile Include="Authentication\RequestLoginAttribute.cs" />
+    <Compile Include="DynamicPage\AssemblyEx.cs" />
+    <Compile Include="DynamicPage\Condition.cs" />
+    <Compile Include="DynamicPage\Ex.cs" />
+    <Compile Include="DynamicPage\GridResult.cs" />
+    <Compile Include="DynamicPage\MethodInfoEx.cs" />
+    <Compile Include="DynamicPage\MyPagedResult.cs" />
+    <Compile Include="DynamicPage\PagedInputDto.cs" />
+    <Compile Include="DynamicPage\PageFilterDto.cs" />
     <Compile Include="Common\HelperExt.cs" />
-    <Compile Include="Common\PageFilterDto.cs" />
     <Compile Include="Common\PdfConverHelper.cs" />
-    <Compile Include="Common\CrosHeader.cs" />
-    <Compile Include="Common\DataTableHelper.cs" />
     <Compile Include="Common\HTTPHelper.cs" />
     <Compile Include="Common\ModelStateValid.cs" />
     <Compile Include="Common\NopiExcel.cs" />
     <Compile Include="Common\WordTemplateHelper.cs" />
+    <Compile Include="Controllers\ModelController.cs" />
+    <Compile Include="Controllers\ModelDetailController.cs" />
     <Compile Include="Controllers\UploadController.cs" />
-    <Compile Include="Controllers\AcademicYearController.cs" />
-    <Compile Include="Controllers\AuthController.cs" />
-    <Compile Include="Controllers\DicController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DynamicPage\QueryableExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

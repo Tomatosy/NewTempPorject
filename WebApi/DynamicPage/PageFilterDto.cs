@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SeaSky.NewTempProject.BLL
+namespace Tomato.SumhsAuditPreWarning.WebApi
 {
     public class PageFilterDto
     {
@@ -116,7 +116,8 @@ namespace SeaSky.NewTempProject.BLL
                 }
                 list.Add(item2);
             }
-            return "(" + string.Join(" " + InnerType + " ", list) + "  ) {0}";
+            return string.Join(" " + InnerType + " ", list) + " {0}";
+            //return "(" + string.Join(" " + InnerType + " ", list) + "  ) {0}";
         }
     }
 }
