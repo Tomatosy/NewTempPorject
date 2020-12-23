@@ -62,6 +62,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Appraisals\AppraisalsService.cs" />
+    <Compile Include="Appraisals\IAppraisalsService.cs" />
     <Compile Include="Units\ApplicationContext.cs" />
     <Compile Include="Units\DynamicTableHelper.cs" />
     <Compile Include="Units\LogWriter.cs" />
@@ -83,12 +85,8 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>TomatoServiceSy.cs</LastGenOutput>
       <LastOutputs>
-.\AcademicYear\AcademicYearService.cs
-.\AcademicYear\IAcademicYearService.cs
-.\Auth\AuthService.cs
-.\Auth\IAuthService.cs
-.\Dic\DicService.cs
-.\Dic\IDicService.cs
+.\Appraisals\AppraisalsService.cs
+.\Appraisals\IAppraisalsService.cs
 </LastOutputs>
     </Content>
   </ItemGroup>

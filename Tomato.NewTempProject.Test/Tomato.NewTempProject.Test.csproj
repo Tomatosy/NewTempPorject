@@ -67,8 +67,7 @@
     <Reference Include="System.Transactions" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AcademicYear_Test.cs" />
-    <Compile Include="Dic_Test.cs" />
+    <Compile Include="Appraisals_Test.cs" />
     <Compile Include="TomatoNTestSy.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -84,10 +83,7 @@
     <Content Include="TomatoNTestSy.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>TomatoNTestSy.cs</LastGenOutput>
-      <LastOutputs>
-.\AcademicYear_Test.cs
-.\Dic_Test.cs
-</LastOutputs>
+      <LastOutputs>.\Appraisals_Test.cs</LastOutputs>
     </Content>
   </ItemGroup>
   <ItemGroup>

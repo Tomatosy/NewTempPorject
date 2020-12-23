@@ -5,27 +5,6 @@
   "NameSpace1": "aaa",
   "TableName": "tb_",
   "SonTableList": [
-"Appraisals",
-"AppraisalsDetailInfo",
-"AppraisalsEmployee",
-"AppraisalsYear",
-"OrgehModulusOption",
-"OrgehOption",
-"OrgehResultDetailInfo",
-"OrgehResultInfo",
-"OrgerLeaderReviewInfo",
-"OrgLeader",
-"PersonReview",
-"PersonReviewDetaillnfo",
-"PersonReviewResultlnfo",
-"Quota",
-"ServiceReviewInfo",
-"Staff360Option",
-"Staff360ResultDetailInfo",
-"Staff360ResultInfo",
-"TeacherBounsInfo",
-"TeacherOrgehRankInfo",
-"TeacherOrgehResultDetailInfo",
-"TeacherOrgehResultlInfo"
+"Appraisals"
   ]
 }

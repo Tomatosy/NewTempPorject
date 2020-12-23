@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Tomato.SumhsAuditPreWarning.WebApi
+namespace Tomato.StandardLib.DynamicPage
 {
     /// <summary>
     /// 列表返回数据结构

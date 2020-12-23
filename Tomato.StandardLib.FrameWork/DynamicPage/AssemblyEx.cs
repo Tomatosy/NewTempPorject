@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace Tomato.SumhsAuditPreWarning.WebApi
+namespace Tomato.StandardLib.DynamicPage
 {
     public static class AssemblyEx
     {

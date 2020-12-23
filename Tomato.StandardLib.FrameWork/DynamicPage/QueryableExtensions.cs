@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Tomato.SumhsAuditPreWarning.WebApi
+namespace Tomato.StandardLib.DynamicPage
 {
 
     public static class QueryableExtensions

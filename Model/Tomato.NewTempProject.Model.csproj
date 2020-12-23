@@ -43,6 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Appraisals\AppraisalsInputModel.cs" />
+    <Compile Include="Appraisals\AppraisalsModel.cs" />
+    <Compile Include="Appraisals\AppraisalsOutputModel.cs" />
+    <Compile Include="Appraisals\AppraisalsViewModel.cs" />
     <Compile Include="Enum\EnumLogLevel.cs" />
     <Compile Include="ModelDetail\ModelDetailInputModel.cs" />
     <Compile Include="ModelDetail\ModelDetailModel.cs" />
@@ -71,18 +75,10 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>TomatoModelSy.cs</LastGenOutput>
       <LastOutputs>
-.\AcademicYear\AcademicYearInputModel.cs
-.\AcademicYear\AcademicYearModel.cs
-.\AcademicYear\AcademicYearOutputModel.cs
-.\AcademicYear\AcademicYearViewModel.cs
-.\Auth\AuthInputModel.cs
-.\Auth\AuthModel.cs
-.\Auth\AuthOutputModel.cs
-.\Auth\AuthViewModel.cs
-.\Dic\DicInputModel.cs
-.\Dic\DicModel.cs
-.\Dic\DicOutputModel.cs
-.\Dic\DicViewModel.cs
+.\Appraisals\AppraisalsInputModel.cs
+.\Appraisals\AppraisalsModel.cs
+.\Appraisals\AppraisalsOutputModel.cs
+.\Appraisals\AppraisalsViewModel.cs
 </LastOutputs>
     </Content>
   </ItemGroup>
