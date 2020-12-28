@@ -487,6 +487,41 @@
             带参数据类型
             </summary>
         </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Controllers.AcademicYearController.ListViewPageAcademicYear(Tomato.NewTempProject.Model.AcademicYearViewModel)">
+            <summary>
+            获取学年表视图列表分页
+            </summary>
+            <param name="model">ViewModel</param>
+            <returns>ViewModel</returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Controllers.AcademicYearController.ListPageAcademicYear(Tomato.NewTempProject.Model.AcademicYearInputModel)">
+            <summary>
+            获取学年表列表分页
+            </summary>
+            <param name="model">InputModel</param>
+            <returns>OutputModel</returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Controllers.AcademicYearController.ModifyAcademicYear(Tomato.NewTempProject.Model.AcademicYearInputModel)">
+            <summary>
+            新增、修改学年表
+            </summary>
+            <param name="model">OutputModel</param>
+            <returns>OutputModel</returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Controllers.AcademicYearController.DeleteAcademicYear(System.Collections.Generic.List{System.Nullable{System.Guid}})">
+            <summary>
+            删除学年表 (逻辑删除)
+            </summary>
+            <param name="IDs">List-->Guid?</param>
+            <returns>受影响行数</returns>
+        </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Controllers.AcademicYearController.GetAcademicYear(System.Nullable{System.Guid})">
+            <summary>
+            获取单个学年表
+            </summary>
+            <param name="ID">Guid?</param>
+            <returns>ViewModel</returns>
+        </member>
         <member name="M:Tomato.NewTempProject.WebApi.Controllers.ModelController.ListPageDynamicJoinModelList(Tomato.NewTempProject.Model.TableSelModel)">
             <summary>
             查询动态连接表分页

@@ -24,16 +24,17 @@
     List<string> SonTableList = new List<string>();
     SonTableList.AddRange(myConfig.SonTableList);
 
-    List<DbTable> tableInfos=DbHandler.GetDbTables(myConfig.ConnectionString, myConfig.TableName);
+    List<DbTable> tableInfos=DbHandler.ListDbTables(myConfig.ConnectionString, myConfig.TableName);
     string curPath = Path.GetDirectoryName(Host.TemplateFile);
 
     foreach(DbTable tableInfo in tableInfos)
     {
-        string tableName=tableInfo.TableName.Replace(myConfig.TableName,"");
+        string tableName=tableInfo.TableName;
         if(!SonTableList.Exists(x=>x==tableName))
         {
             continue;
         }
+        tableName=tableInfo.TableName.Replace(myConfig.TableName,"");
         string destPath = Path.Combine(curPath, tableName);
         string fileName = string.Format(@"{0}\{1}.cs",destPath, StringHandler.GetCamel(tableName)+"Model");
         TomatoModelSy template = new TomatoModelSy(tableInfo,myConfig);
@@ -82,11 +83,13 @@
 
     foreach(ViewInfo viewInfo in tempViewInfo)
     { 
-        string tableName=viewInfo.ViewName.Replace(myConfig.TableName,"");
+        string tableName=viewInfo.ViewName;
+        tableName=viewInfo.ViewName.Replace(myConfig.ViewNamePrefix,"");
         if(!SonTableList.Exists(x=>x==tableName))
         {
             continue;
         }
+        tableName=viewInfo.ViewName.Replace(myConfig.TableName,"");
         string destPath = Path.Combine(curPath, tableName);
         string fileName = string.Format(@"{0}\{1}.cs", destPath, StringHandler.GetCamel(tableName)+"ViewModel");
         TomatoViewModelSy  template3 = new TomatoViewModelSy(viewInfo,myConfig);

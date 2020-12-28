@@ -10,8 +10,19 @@
 
         public TomatoModelSy(DbTable model,MyConfig myConfig)
         {
+            List<DbColumn> tempCol=new List<DbColumn>();
+            foreach(DbColumn column in model.DbColumns){
+                string colName=column.ColumnName.ToLower();
+               // if(!colName.Contains("isdelete")&&!colName.Contains("gmtcreateuser")&&!colName.Contains("gmtcreatedate")&&!colName.Contains("gmtupdateuser")&&!colName.Contains("gmtupdatedate")&&!colName.Contains("timestamp"))
+                if(!colName.Contains("gmtcreateuser")&&!colName.Contains("gmtcreatedate")&&!colName.Contains("gmtupdateuser")&&!colName.Contains("gmtupdatedate")&&!colName.Contains("timestamp"))
+                {
+                    tempCol.Add(column);
+                }
+            }
+            model.DbColumns=tempCol;
             _model = model;
             _myConfig=myConfig;
+            _model.TableName=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""));
         } 
         private string GetIsNull(DbColumn column)
         {
@@ -58,9 +69,9 @@ namespace <#=        _myConfig.NameSpace #>
 	/// <summary>
     /// <#=        _model.TableDesc #>
     /// </summary>
-    [DBTableInfo("<#=        _model.TableName #>")]
+    [DBTableInfo("<#=_myConfig.TableName #><#=_model.TableName#>")]
     [Serializable]
-    public partial class <#=        StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Model : BasePageModel
+    public partial class <#=        _model.TableName#>Model : BasePageModel
     {
 
 
@@ -86,7 +97,7 @@ namespace <#=        _myConfig.NameSpace #>
         /// <#=column.Remark#>
         /// </summary>
         [DBFieldInfo(ColumnName = "<#=column.ColumnNameAlias#>", IsIdentity = false, 
-IsKey = <#=column.ColumnNameAlias==_model.TablePrimarkeyName?"true":"false"#>, SqlDbType =SqlDbType.<#=column.ColumnSqlDbTypeStr#>, OrderIndex = -1, OrderAsc = true<#=GetIsLikeSel(column)#>)]
+IsKey = <#=column.IsPrimaryKey?"true":"false"#>, SqlDbType =SqlDbType.<#=column.ColumnSqlDbTypeStr#>, OrderIndex = -1, OrderAsc = true<#=GetIsLikeSel(column)#>)]
         protected <#=column.CSharpType#><#=GetIsNull(column)#> _<#=column.ColumnNameAliasLower#><#=column.Remark.Contains("是否删除")?"=false":""#>;
 
 <#+} #>

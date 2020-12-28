@@ -3,9 +3,9 @@
     using System;
     using System.Collections.Generic;
     using Tomato.StandardLib.MyModel;
-using Tomato.NewTempProject.Model;
+    using Tomato.NewTempProject.Model;
 
-    public interface IModelDetailService 
+    public interface IModelDetailService
     {
 
         #region 基础方法
@@ -42,8 +42,8 @@ using Tomato.NewTempProject.Model;
         /// </summary>
         BaseResultModel<ModelDetailViewModel> GetModelDetail(Guid? ID);
 
-        #endregion  
-  }
+        #endregion
+    }
 
 
 }

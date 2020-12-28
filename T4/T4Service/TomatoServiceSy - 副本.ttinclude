@@ -10,8 +10,18 @@
 
         public TomatoServiceSy(DbTable model,MyConfig myConfig)
         {
+            List<DbColumn> tempCol=new List<DbColumn>();
+            foreach(DbColumn column in model.DbColumns){
+                string colName=column.ColumnName.ToLower();
+                if(!colName.Contains("isdelete")&&!colName.Contains("gmtcreateuser")&&!colName.Contains("gmtcreatedate")&&!colName.Contains("gmtupdateuser")&&!colName.Contains("gmtupdatedate")&&!colName.Contains("timestamp"))
+                {
+                    tempCol.Add(column);
+                }
+            }
+            model.DbColumns=tempCol;
             _model = model;
             _myConfig=myConfig;
+            _model.TableName=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""));
         }
         private string GetIsNull(DbColumn column)
         {
@@ -44,10 +54,10 @@ using <#=_myConfig.NameSpace#>.Model.Enum;
 using <#=_myConfig.NameSpace#>.DAL;
 using Tomato.StandardLib.MyExtensions;
 
-    public class <#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Service : I<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Service
+    public class <#=_model.TableName#>Service : I<#=_model.TableName#>Service
     {
         [Dependency]
-        public I<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Repository <#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Repository { get; set; }
+        public I<#=_model.TableName#>Repository <#=_model.TableName#>Repository { get; set; }
 
 
         #region 基础方法
@@ -56,31 +66,31 @@ using Tomato.StandardLib.MyExtensions;
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public BaseResultModel<PageModel<<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ViewModel>> ListViewPage<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>(<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ViewModel model)
+        public BaseResultModel<PageModel<<#=_model.TableName#>ViewModel>> ListViewPage<#=_model.TableName#>(<#=_model.TableName#>ViewModel model)
         {
             try
             {
                 if (model == null)
                 {
-                    model = new <#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ViewModel()
+                    model = new <#=_model.TableName#>ViewModel()
                     {
                         PageNO = 1,
                         PageSize = int.MaxValue
                     };
                 }
                 // 开启查询outModel里面的视图
-                using (this.<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Repository.BeginSelView())
+                using (this.<#=_model.TableName#>Repository.BeginSelView())
                 {
-                  using (this.<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Repository.BeginLikeMode())
+                  using (this.<#=_model.TableName#>Repository.BeginLikeMode())
                   {
-                      return new SuccessResultModel<PageModel<<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ViewModel>>(this.<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Repository.ListViewPage(model));
+                      return new SuccessResultModel<PageModel<<#=_model.TableName#>ViewModel>>(this.<#=_model.TableName#>Repository.ListViewPage(model));
                   }
                 }
             }
             catch (Exception e)
             {
-                LogWriter.WriteLog(EnumLogLevel.Fatal, "ListViewPage<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>", JsonConvert.SerializeObject(model), "<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>", "获取<#=_model.TableDesc #>视图列表分页查询数据时发生错误.", e);
-                return new ErrorResultModel<PageModel<<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ViewModel>>(EnumErrorCode.系统异常, "获取<#=_model.TableDesc #>视图列表分页查询数据时发生错误!");
+                LogWriter.WriteLog(EnumLogLevel.Fatal, "ListViewPage<#=_model.TableName#>", JsonConvert.SerializeObject(model), "<#=_model.TableName#>", "获取<#=_model.TableDesc #>视图列表分页查询数据时发生错误.", e);
+                return new ErrorResultModel<PageModel<<#=_model.TableName#>ViewModel>>(EnumErrorCode.系统异常, "获取<#=_model.TableDesc #>视图列表分页查询数据时发生错误!");
             }
         }
 		
@@ -89,27 +99,27 @@ using Tomato.StandardLib.MyExtensions;
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public BaseResultModel<PageModel<<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>OutputModel>> ListPage<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>(<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>InputModel model)
+        public BaseResultModel<PageModel<<#=_model.TableName#>OutputModel>> ListPage<#=_model.TableName#>(<#=_model.TableName#>InputModel model)
         {
             try
             {
                 if (model == null)
                 {
-                    model = new <#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>InputModel()
+                    model = new <#=_model.TableName#>InputModel()
                     {
                         PageNO = 1,
                         PageSize = int.MaxValue
                     };
                 }
-                using (this.<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Repository.BeginLikeMode())
+                using (this.<#=_model.TableName#>Repository.BeginLikeMode())
                 {
-                    return new SuccessResultModel<PageModel<<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>OutputModel>>(this.<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Repository.ListPage(model));
+                    return new SuccessResultModel<PageModel<<#=_model.TableName#>OutputModel>>(this.<#=_model.TableName#>Repository.ListPage(model));
                 }
             }
             catch (Exception e)
             {
-                LogWriter.WriteLog(EnumLogLevel.Fatal, "ListPage<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>", JsonConvert.SerializeObject(model), "<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>", "获取<#=_model.TableDesc #>列表分页查询数据时发生错误.", e);
-                return new ErrorResultModel<PageModel<<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>OutputModel>>(EnumErrorCode.系统异常, "获取<#=_model.TableDesc #>列表分页查询数据时发生错误!");
+                LogWriter.WriteLog(EnumLogLevel.Fatal, "ListPage<#=_model.TableName#>", JsonConvert.SerializeObject(model), "<#=_model.TableName#>", "获取<#=_model.TableDesc #>列表分页查询数据时发生错误.", e);
+                return new ErrorResultModel<PageModel<<#=_model.TableName#>OutputModel>>(EnumErrorCode.系统异常, "获取<#=_model.TableDesc #>列表分页查询数据时发生错误!");
             }
         }
 
@@ -118,25 +128,25 @@ using Tomato.StandardLib.MyExtensions;
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public BaseResultModel<<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>OutputModel> Modify<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>(<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>InputModel model)
+        public BaseResultModel<<#=_model.TableName#>OutputModel> Modify<#=_model.TableName#>(<#=_model.TableName#>InputModel model)
         {
-            SuccessResultModel<<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>OutputModel> result = new SuccessResultModel<<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>OutputModel>();
-            ErrorResultModel<<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>OutputModel> error = new ErrorResultModel<<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>OutputModel>();
+            SuccessResultModel<<#=_model.TableName#>OutputModel> result = new SuccessResultModel<<#=_model.TableName#>OutputModel>();
+            ErrorResultModel<<#=_model.TableName#>OutputModel> error = new ErrorResultModel<<#=_model.TableName#>OutputModel>();
             try
             {
-                if (model.<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ID.IsNullOrEmpty())
+                if (model.<#=_model.TableName#>ID.IsNullOrEmpty())
                 {
-                    result.Data = this.<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Repository.InsertAndReturn(model);
+                    result.Data = this.<#=_model.TableName#>Repository.InsertAndReturn(model);
                 }
                 else
                 {
-                    result.Data = this.<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Repository.UpdateWithKeysAndReturn(model);
+                    result.Data = this.<#=_model.TableName#>Repository.UpdateWithKeysAndReturn(model);
                 }
                 return result;
             }
             catch (Exception ex)
             {
-                LogWriter.WriteLog(EnumLogLevel.Fatal, "Modify<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>", JsonConvert.SerializeObject(model), "<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>", "新增、修改<#=_model.TableDesc #>异常！", ex);
+                LogWriter.WriteLog(EnumLogLevel.Fatal, "Modify<#=_model.TableName#>", JsonConvert.SerializeObject(model), "<#=_model.TableName#>", "新增、修改<#=_model.TableDesc #>异常！", ex);
                 error.ErrorCode = EnumErrorCode.系统异常;
                 error.ErrorMessage = "新增、修改<#=_model.TableDesc #>异常!";
                 return error;
@@ -148,21 +158,21 @@ using Tomato.StandardLib.MyExtensions;
         /// </summary>
         /// <param name="IDs"></param>
         /// <returns></returns>
-        public BaseResultModel<int> Delete<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>(List<Guid?> IDs)
+        public BaseResultModel<int> Delete<#=_model.TableName#>(List<Guid?> IDs)
         {
             SuccessResultModel<int> result = new SuccessResultModel<int>();
             ErrorResultModel<int> error = new ErrorResultModel<int>();
             try
             {
-                List<<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>InputModel> delList = new List<<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>InputModel>();
+                List<<#=_model.TableName#>InputModel> delList = new List<<#=_model.TableName#>InputModel>();
                 foreach (Guid? item in IDs)
                 {
-                    delList.Add(new <#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>InputModel()
+                    delList.Add(new <#=_model.TableName#>InputModel()
                     {
-                        <#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ID = item
+                        <#=_model.TableName#>ID = item
                     });
                 }
-                result.Data = this.<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Repository.DeleteWithKeys(delList.ToArray());
+                result.Data = this.<#=_model.TableName#>Repository.DeleteWithKeys(delList.ToArray());
 
                 if(result.Data==0)
                 {
@@ -174,7 +184,7 @@ using Tomato.StandardLib.MyExtensions;
             }
             catch (Exception ex)
             {
-                LogWriter.WriteLog(EnumLogLevel.Fatal, "Delete<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>", JsonConvert.SerializeObject(IDs), "<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>", "删除<#=_model.TableDesc #> (逻辑删除)异常！", ex);
+                LogWriter.WriteLog(EnumLogLevel.Fatal, "Delete<#=_model.TableName#>", JsonConvert.SerializeObject(IDs), "<#=_model.TableName#>", "删除<#=_model.TableDesc #> (逻辑删除)异常！", ex);
                 error.ErrorCode = EnumErrorCode.系统异常;
                 error.ErrorMessage = "删除<#=_model.TableDesc #> (逻辑删除)异常!";
                 return error;
@@ -186,19 +196,19 @@ using Tomato.StandardLib.MyExtensions;
         /// </summary>
         /// <param name="ID"></param>
         /// <returns></returns>
-        public BaseResultModel<<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ViewModel> Get<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>(Guid? ID)
+        public BaseResultModel<<#=_model.TableName#>ViewModel> Get<#=_model.TableName#>(Guid? ID)
         {
             try
             {
                 // 开启查询outModel里面的视图
-                using (this.<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Repository.BeginSelView())
+                using (this.<#=_model.TableName#>Repository.BeginSelView())
                 {
-                    using (this.<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Repository.BeginLikeMode())
+                    using (this.<#=_model.TableName#>Repository.BeginLikeMode())
                     {
-                      return new SuccessResultModel<<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ViewModel>(
-                          this.<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Repository.SelectWithViewModel(new <#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ViewModel()
+                      return new SuccessResultModel<<#=_model.TableName#>ViewModel>(
+                          this.<#=_model.TableName#>Repository.SelectWithViewModel(new <#=_model.TableName#>ViewModel()
                           {
-                              <#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ID = ID
+                              <#=_model.TableName#>ID = ID
                           }
                       ));
                     }
@@ -206,8 +216,8 @@ using Tomato.StandardLib.MyExtensions;
             }
             catch (Exception e)
             {
-                LogWriter.WriteLog(EnumLogLevel.Fatal, "Get<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>", ID+ string.Empty, "<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>", "获取单个<#=_model.TableDesc #>异常", e);
-                return new ErrorResultModel<<#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ViewModel>(EnumErrorCode.系统异常, "获取单个<#=_model.TableDesc #>异常!");
+                LogWriter.WriteLog(EnumLogLevel.Fatal, "Get<#=_model.TableName#>", ID+ string.Empty, "<#=_model.TableName#>", "获取单个<#=_model.TableDesc #>异常", e);
+                return new ErrorResultModel<<#=_model.TableName#>ViewModel>(EnumErrorCode.系统异常, "获取单个<#=_model.TableDesc #>异常!");
             }
         }
         #endregion

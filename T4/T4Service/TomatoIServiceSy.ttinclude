@@ -10,8 +10,18 @@
 
         public TomatoIServiceSy(DbTable model,MyConfig myConfig)
         {
+            List<DbColumn> tempCol=new List<DbColumn>();
+            foreach(DbColumn column in model.DbColumns){
+                string colName=column.ColumnName.ToLower();
+                if(!colName.Contains("isdelete")&&!colName.Contains("gmtcreateuser")&&!colName.Contains("gmtcreatedate")&&!colName.Contains("gmtupdateuser")&&!colName.Contains("gmtupdatedate")&&!colName.Contains("timestamp"))
+                {
+                    tempCol.Add(column);
+                }
+            }
+            model.DbColumns=tempCol;
             _model = model;
             _myConfig=myConfig;
+            _model.TableName=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""));
         }
         private string GetIsNull(DbColumn column)
         {
@@ -33,7 +43,7 @@ namespace <#=            _myConfig.NameSpace #>.BLL
     using Tomato.StandardLib.MyModel;
 using <#=            _myConfig.NameSpace#>.Model;
 
-    public interface I<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Service 
+    public interface I<#=            _model.TableName#>Service 
     {
 
         #region 基础方法
@@ -42,33 +52,33 @@ using <#=            _myConfig.NameSpace#>.Model;
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        BaseResultModel<PageModel<<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ViewModel>> ListViewPage<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>(<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ViewModel model);
+        BaseResultModel<PageModel<<#=            _model.TableName#>ViewModel>> ListViewPage<#=            _model.TableName#>(<#=            _model.TableName#>ViewModel model);
 
         /// <summary>
         /// 获取<#=            _model.TableDesc #>列表分页
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        BaseResultModel<PageModel<<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>OutputModel>> ListPage<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>(<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>InputModel model);
+        BaseResultModel<PageModel<<#=            _model.TableName#>OutputModel>> ListPage<#=            _model.TableName#>(<#=            _model.TableName#>InputModel model);
 
         /// <summary>
         /// 新增、修改<#=            _model.TableDesc #>
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        BaseResultModel<<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>OutputModel> Modify<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>(<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>InputModel model);
+        BaseResultModel<<#=            _model.TableName#>OutputModel> Modify<#=            _model.TableName#>(<#=            _model.TableName#>InputModel model);
 
         /// <summary>
         /// 删除<#=            _model.TableDesc #> (逻辑删除)
         /// </summary>
         /// <param name="IDs"></param>
         /// <returns></returns>
-        BaseResultModel<int> Delete<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>(List<Guid?> IDs);
+        BaseResultModel<int> Delete<#=            _model.TableName#>(List<Guid?> IDs);
 
         /// <summary>
         /// 获取单个<#=            _model.TableDesc #>
         /// </summary>
-        BaseResultModel<<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ViewModel> Get<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>(Guid? ID);
+        BaseResultModel<<#=            _model.TableName#>ViewModel> Get<#=            _model.TableName#>(Guid? ID);
 
         #endregion  
   }

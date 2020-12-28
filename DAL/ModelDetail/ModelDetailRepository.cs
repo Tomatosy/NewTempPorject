@@ -21,7 +21,7 @@
         [Dependency]
         public IUnityContainer Container { get; set; }
 
-        public ModelDetailRepository() : base("HealthAuditConn", DatabaseMode.SqlClient)
+        public ModelDetailRepository() : base("BaseConn", DatabaseMode.SqlClient)
         {
 
         }

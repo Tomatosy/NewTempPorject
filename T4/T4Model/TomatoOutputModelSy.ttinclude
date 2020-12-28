@@ -10,8 +10,18 @@
 
         public TomatoOutputModelSy(DbTable model,MyConfig myConfig)
         {
+            List<DbColumn> tempCol=new List<DbColumn>();
+            foreach(DbColumn column in model.DbColumns){
+                string colName=column.ColumnName.ToLower();
+                if(!colName.Contains("isdelete")&&!colName.Contains("gmtcreateuser")&&!colName.Contains("gmtcreatedate")&&!colName.Contains("gmtupdateuser")&&!colName.Contains("gmtupdatedate")&&!colName.Contains("timestamp"))
+                {
+                    tempCol.Add(column);
+                }
+            }
+            model.DbColumns=tempCol;
             _model = model;
             _myConfig=myConfig;
+            _model.TableName=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""));
         }
         private string GetIsNull(DbColumn column)
         {
@@ -40,7 +50,7 @@ namespace <#=_myConfig.NameSpace #>
 	/// <summary>
     /// <#=_model.TableDesc #>输出扩展类
     /// </summary>
-    public partial class <#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>OutputModel : <#=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Model
+    public partial class <#=_model.TableName#>OutputModel : <#=_model.TableName#>Model
     {
 
     }

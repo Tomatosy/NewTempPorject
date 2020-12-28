@@ -10,8 +10,18 @@
 
         public SeaSkyRepositorySy(DbTable model,MyConfig myConfig)
         {
+            List<DbColumn> tempCol=new List<DbColumn>();
+            foreach(DbColumn column in model.DbColumns){
+                string colName=column.ColumnName.ToLower();
+                if(!colName.Contains("isdelete")&&!colName.Contains("gmtcreateuser")&&!colName.Contains("gmtcreatedate")&&!colName.Contains("gmtupdateuser")&&!colName.Contains("gmtupdatedate")&&!colName.Contains("timestamp"))
+                {
+                    tempCol.Add(column);
+                }
+            }
+            model.DbColumns=tempCol;
             _model = model;
             _myConfig=myConfig;
+            _model.TableName=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""));
         }
         private string GetIsNull(DbColumn column)
         {
@@ -43,12 +53,12 @@ using System.Data.Common;
 using SeaSky.StandardLib.MyModel;
 using <#=            _myConfig.NameSpace#>.Model;
 
-    public class <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Repository : DALPageBaseNew<<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Model,<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>OutputModel, <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ViewModel>, I<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Repository
+    public class <#=            _model.TableName#>Repository : DALPageBaseNew<<#=            _model.TableName#>Model,<#=            _model.TableName#>OutputModel, <#=            _model.TableName#>ViewModel>, I<#=            _model.TableName#>Repository
     {
         [Dependency]
         public IUnityContainer Container { get; set; }
 
-        public <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Repository() : base("BaseConn", DatabaseMode.SqlClient)
+        public <#=            _model.TableName#>Repository() : base("BaseConn", DatabaseMode.SqlClient)
         {
 
         }

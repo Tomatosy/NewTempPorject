@@ -4,6 +4,96 @@
         <name>Tomato.NewTempProject.Model</name>
     </assembly>
     <members>
+        <member name="T:Tomato.NewTempProject.Model.AcademicYearInputModel">
+            <summary>
+            学年表输入扩展类
+            </summary>
+        </member>
+        <member name="T:Tomato.NewTempProject.Model.AcademicYearModel">
+            <summary>
+            学年表
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.AcademicYearModel.AcademicYearID">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.AcademicYearModel.AcademicYearName">
+            <summary>
+            学年名称
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.AcademicYearModel.Term">
+            <summary>
+            学期(秋季学期、冬季学期、春季学期、夏季小学期)
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.AcademicYearModel.Status">
+            <summary>
+            学年状态（开启、关闭）
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.AcademicYearModel.InputStatus">
+            <summary>
+            工作量年度维护状态（开启、关闭）【子明细表的对应年度可维护性】
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.AcademicYearModel.FinalActionTime">
+            <summary>
+            最后业务确认期限
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.AcademicYearModel.IsDelete">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.AcademicYearModel._academicYearID">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.AcademicYearModel._academicYearName">
+            <summary>
+            学年名称
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.AcademicYearModel._term">
+            <summary>
+            学期(秋季学期、冬季学期、春季学期、夏季小学期)
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.AcademicYearModel._status">
+            <summary>
+            学年状态（开启、关闭）
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.AcademicYearModel._inputStatus">
+            <summary>
+            工作量年度维护状态（开启、关闭）【子明细表的对应年度可维护性】
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.AcademicYearModel._finalActionTime">
+            <summary>
+            最后业务确认期限
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.AcademicYearModel._isDelete">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="T:Tomato.NewTempProject.Model.AcademicYearOutputModel">
+            <summary>
+            学年表输出扩展类
+            </summary>
+        </member>
+        <member name="T:Tomato.NewTempProject.Model.AcademicYearViewModel">
+            <summary>
+            学年表输出扩展类
+            </summary>
+        </member>
         <member name="T:Tomato.NewTempProject.Model.ModelDetailInputModel">
             <summary>
             模块明细表输入扩展类

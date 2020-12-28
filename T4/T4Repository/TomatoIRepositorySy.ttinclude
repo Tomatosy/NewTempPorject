@@ -10,8 +10,18 @@
 
         public TomatoIRepositorySy(DbTable model,MyConfig myConfig)
         {
+            List<DbColumn> tempCol=new List<DbColumn>();
+            foreach(DbColumn column in model.DbColumns){
+                string colName=column.ColumnName.ToLower();
+                if(!colName.Contains("isdelete")&&!colName.Contains("gmtcreateuser")&&!colName.Contains("gmtcreatedate")&&!colName.Contains("gmtupdateuser")&&!colName.Contains("gmtupdatedate")&&!colName.Contains("timestamp"))
+                {
+                    tempCol.Add(column);
+                }
+            }
+            model.DbColumns=tempCol;
             _model = model;
             _myConfig=myConfig;
+            _model.TableName=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""));
         }
         private string GetIsNull(DbColumn column)
         {
@@ -37,7 +47,7 @@ using Tomato.StandardLib.MyBaseClass;
 using Tomato.StandardLib.MyModel;
 using <#=            _myConfig.NameSpace#>.Model;
 
-    public interface I<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Repository : IDALBaseNew<<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Model, <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>OutputModel, <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ViewModel>, IDALPageBaseNew<<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Model, <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>OutputModel, <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ViewModel>
+    public interface I<#=            _model.TableName#>Repository : IDALBaseNew<<#=            _model.TableName#>Model, <#=            _model.TableName#>OutputModel, <#=            _model.TableName#>ViewModel>, IDALPageBaseNew<<#=            _model.TableName#>Model, <#=            _model.TableName#>OutputModel, <#=            _model.TableName#>ViewModel>
     {
 
     }

@@ -1,4 +1,4 @@
-﻿namespace SeaSky.PersonnelPerformance.Model
+﻿namespace Tomato.NewTempProject.Model
 {
     using Tomato.StandardLib.MyAttribute;
     using System.Data;
@@ -6,10 +6,10 @@
     using System;
 
 	/// <summary>
-    /// 格式配置表输出扩展类
+    /// 学年表输出扩展类
     /// </summary>
-    [DBTableInfo("View_tb_Appraisals")]
-    public partial class AppraisalsViewModel: AppraisalsModel
+    [DBTableInfo("View_tb_AcademicYear")]
+    public partial class AcademicYearViewModel: AcademicYearModel
     {
         #region private property
 

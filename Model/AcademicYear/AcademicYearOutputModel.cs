@@ -1,4 +1,4 @@
-﻿namespace SeaSky.PersonnelPerformance.Model
+﻿namespace Tomato.NewTempProject.Model
 {
     using Tomato.StandardLib.MyAttribute;
     using System;
@@ -10,9 +10,9 @@
     using Tomato.StandardLib.MyModel;
 
 	/// <summary>
-    /// 考核项目表输出扩展类
+    /// 学年表输出扩展类
     /// </summary>
-    public partial class AppraisalsOutputModel : AppraisalsModel
+    public partial class AcademicYearOutputModel : AcademicYearModel
     {
 
     }

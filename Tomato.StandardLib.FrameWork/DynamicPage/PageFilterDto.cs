@@ -63,9 +63,12 @@ namespace Tomato.StandardLib.DynamicPage
             dicOperator["ge"] = ">={0}";
             dicOperator["lt"] = "<{0}";
             dicOperator["le"] = "<={0}";
-            dicOperator["like"] = ".Contains({0})";
-            dicOperator["llike"] = ".StartsWith({0})";
-            dicOperator["rlike"] = ".EndsWith({0})";
+            dicOperator["like"] = "like %{0}%";
+            dicOperator["llike"] = "like %{0}";
+            dicOperator["rlike"] = "like {0}%";
+            //dicOperator["like"] = ".Contains({0})";
+            //dicOperator["llike"] = ".StartsWith({0})";
+            //dicOperator["rlike"] = ".EndsWith({0})";
             dicOperator["null"] = "=null";
             dicOperator["not-null"] = "!=null";
         }
@@ -79,12 +82,16 @@ namespace Tomato.StandardLib.DynamicPage
             string strWhere = GetStrWhere();
             if (Filters != null)
             {
-                strWhere = string.Format(strWhere, Type + " {0}");
+                //strWhere = string.Format(strWhere, Type + " {0}");
                 foreach (PageFilterDto filter in Filters)
                 {
+                    // todo
+                    strWhere += Type + " {0}";
+
+
                     filter.paramLocation = paramLocation;
                     filter.paramValues = paramValues;
-                    strWhere = string.Format(strWhere, filter.ToWhere());
+                    strWhere = string.Format(strWhere, "(" + filter.ToWhere() + ")");
                 }
             }
             else
@@ -116,7 +123,8 @@ namespace Tomato.StandardLib.DynamicPage
                 }
                 list.Add(item2);
             }
-            return string.Join(" " + InnerType + " ", list) + " {0}";
+            return string.Join(" " + InnerType + " ", list);
+            //return string.Join(" " + InnerType + " ", list) + " {0}";
             //return "(" + string.Join(" " + InnerType + " ", list) + "  ) {0}";
         }
     }

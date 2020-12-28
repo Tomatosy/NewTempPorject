@@ -10,8 +10,18 @@
 
         public TomatoViewModelSy(ViewInfo model,MyConfig myConfig)
         {
+            List<ViewColInfo> tempCol=new List<ViewColInfo>();
+            foreach(ViewColInfo column in model.ViewColInfos){
+                string colName=column.ColumnName.ToLower();
+                if(!colName.Contains("isdelete")&&!colName.Contains("gmtcreateuser")&&!colName.Contains("gmtcreatedate")&&!colName.Contains("gmtupdateuser")&&!colName.Contains("gmtupdatedate")&&!colName.Contains("timestamp"))
+                {
+                    tempCol.Add(column);
+                }
+            }
+            model.ViewColInfos=tempCol;
             _model = model;
             _myConfig=myConfig;
+            _model.ViewName=_model.ViewName.Replace(_myConfig.TableName,"");
         }
         private string GetIsNull(ViewColInfo column)
         {
@@ -56,8 +66,8 @@ namespace <#=_myConfig.NameSpace #>
 	/// <summary>
     /// <#=            _model.TableDesc #>输出扩展类
     /// </summary>
-    [DBTableInfo("<#=_myConfig.TableName #><#=_model.ViewName.Replace(_myConfig.TableName,"")#>")]
-    public partial class <#=StringHandler.GetCamel(_model.ViewName.Replace(_myConfig.TableName,""))#>ViewModel: <#=StringHandler.GetCamel(_model.ViewName.Replace(_myConfig.TableName,""))#>Model
+    [DBTableInfo("<#=_myConfig.TableName #><#=_model.ViewName#>")]
+    public partial class <#=StringHandler.GetCamel(_model.ViewName)#>ViewModel: <#=StringHandler.GetCamel(_model.ViewName)#>Model
     {
 <#+            foreach(ViewColInfo column in _model.ViewColInfos){#>
         ///<summary>

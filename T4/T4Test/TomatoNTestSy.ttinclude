@@ -10,8 +10,18 @@
 
         public TomatoNTestSy(DbTable model,MyConfig myConfig)
         {
+            List<DbColumn> tempCol=new List<DbColumn>();
+            foreach(DbColumn column in model.DbColumns){
+                string colName=column.ColumnName.ToLower();
+                if(!colName.Contains("isdelete")&&!colName.Contains("gmtcreateuser")&&!colName.Contains("gmtcreatedate")&&!colName.Contains("gmtupdateuser")&&!colName.Contains("gmtupdatedate")&&!colName.Contains("timestamp"))
+                {
+                    tempCol.Add(column);
+                }
+            }
+            model.DbColumns=tempCol;
             _model = model;
             _myConfig=myConfig;
+            _model.TableName=StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""));
         }
         private string GetIsNull(DbColumn column)
         {
@@ -38,10 +48,10 @@ using <#=            _myConfig.NameSpace#>.Model;
 using <#=            _myConfig.NameSpace#>.BLL;
 
     [TestClass]
-    public class <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>_Test 
+    public class <#=            _model.TableName#>_Test 
     {
 
-        private I<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Service <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Service = ApplicationContext.Current.UnityContainer.Resolve<I<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Service>();
+        private I<#=            _model.TableName#>Service <#=            _model.TableName#>Service = ApplicationContext.Current.UnityContainer.Resolve<I<#=            _model.TableName#>Service>();
 
         private TransactionScope scope;
 
@@ -69,34 +79,24 @@ using <#=            _myConfig.NameSpace#>.BLL;
         /// 获取<#=            _model.TableDesc #>视图列表分页
         /// </summary>
         [TestMethod]
-        public void ListViewPage<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>_Test()
+        public void ListViewPage<#=            _model.TableName#>_Test()
         {
-            <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ViewModel testModel = null;
-            BaseResultModel<PageModel<<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ViewModel>> result = <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Service.ListViewPage<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>(testModel);
+            <#=            _model.TableName#>ViewModel testModel = null;
+            BaseResultModel<PageModel<<#=            _model.TableName#>ViewModel>> result = <#=            _model.TableName#>Service.ListViewPage<#=            _model.TableName#>(testModel);
             Assert.IsTrue(result.IsSuccess && result.Data.DataCount > 0, result.ErrorMessage);
 
-            testModel = new <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ViewModel()
+            testModel = new <#=            _model.TableName#>ViewModel()
             {
                 PageNO = 1,
                 PageSize = 2,
 <#+            foreach(DbColumn column in _model.DbColumns){
                 if(!column.IsNullable){
-                    if(column.ColumnNameAlias.Trim().ToLower().Contains("isdelete")||column.ColumnNameAlias.Trim().Trim().ToLower()==_model.TablePrimarkeyName.Trim().ToLower()){
-                        continue;
-                    }
-                    if(column.CSharpType.ToLower().Contains("guid"))
+                    if(column.CSharpType.ToLower().Contains("string"))
                     {#>
-                <#=                        column.ColumnNameAlias.Trim()#>=Guid.NewGuid(),
-                <#+                    }      else if(column.CSharpType.ToLower().Contains("bool")) {    #>
-                <#=                        column.ColumnNameAlias.Trim()#> = <#=                        new Random(Guid.NewGuid().GetHashCode()).Next(1)==0?"true":"false"#>,
-                <#+                    }      else if(column.CSharpType.ToLower().Contains("int")||column.CSharpType.ToLower().Contains("decimal")) {    #>
-                <#=                        column.ColumnNameAlias.Trim()#> = <#=                        new Random(Guid.NewGuid().GetHashCode()).Next(100)#>,
-                <#+                    }      else if(column.CSharpType.ToLower().Contains("date")) {    #>
-                <#=                        column.ColumnNameAlias.Trim()#> = DateTime.Now,
-                <#+                    }else{#><#=                        column.ColumnNameAlias.Trim()#> = "测试<#=                        column.ColumnNameAlias.Trim()#>",
-            <#+                    } }   break;} #>
+                <#=                        column.ColumnNameAlias#>="测试<#=                        column.ColumnNameAlias#>"
+				     <#+                    break;}}} #>
             };
-            result = <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Service.ListViewPage<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>(testModel);
+            result = <#=            _model.TableName#>Service.ListViewPage<#=            _model.TableName#>(testModel);
             Assert.IsTrue(result.IsSuccess, result.ErrorMessage);
         }
 		
@@ -104,34 +104,24 @@ using <#=            _myConfig.NameSpace#>.BLL;
         /// 获取<#=            _model.TableDesc #>列表分页
         /// </summary>
         [TestMethod]
-        public void ListPage<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>_Test()
+        public void ListPage<#=            _model.TableName#>_Test()
         {
-            <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>InputModel testModel = null;
-            BaseResultModel<PageModel<<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>OutputModel>> result = <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Service.ListPage<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>(testModel);
+            <#=            _model.TableName#>InputModel testModel = null;
+            BaseResultModel<PageModel<<#=            _model.TableName#>OutputModel>> result = <#=            _model.TableName#>Service.ListPage<#=            _model.TableName#>(testModel);
             Assert.IsTrue(result.IsSuccess && result.Data.DataCount > 0, result.ErrorMessage);
 
-            testModel = new <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>InputModel()
+            testModel = new <#=            _model.TableName#>InputModel()
             {
                 PageNO = 1,
                 PageSize = 2,
 <#+            foreach(DbColumn column in _model.DbColumns){
                 if(!column.IsNullable){
-                    if(column.ColumnNameAlias.Trim().ToLower().Contains("isdelete")||column.ColumnNameAlias.Trim().Trim().ToLower()==_model.TablePrimarkeyName.Trim().ToLower()){
-                        continue;
-                    }
-                    if(column.CSharpType.ToLower().Contains("guid"))
+                    if(column.CSharpType.ToLower().Contains("string"))
                     {#>
-                <#=                        column.ColumnNameAlias.Trim()#>=Guid.NewGuid(),
-                <#+                    }      else if(column.CSharpType.ToLower().Contains("bool")) {    #>
-                <#=                        column.ColumnNameAlias.Trim()#> = <#=                        new Random(Guid.NewGuid().GetHashCode()).Next(1)==0?"true":"false"#>,
-                <#+                    }      else if(column.CSharpType.ToLower().Contains("int")||column.CSharpType.ToLower().Contains("decimal")) {    #>
-                <#=                        column.ColumnNameAlias.Trim()#> = <#=                        new Random(Guid.NewGuid().GetHashCode()).Next(100)#>,
-                <#+                    }      else if(column.CSharpType.ToLower().Contains("date")) {    #>
-                <#=                        column.ColumnNameAlias.Trim()#> = DateTime.Now,
-                <#+                    }else{#><#=                        column.ColumnNameAlias.Trim()#> = "测试<#=                        column.ColumnNameAlias.Trim()#>",
-            <#+                    } }   break;} #>
+                <#=                        column.ColumnNameAlias#>="测试<#=                        column.ColumnNameAlias#>"
+				     <#+                    break;}}} #>
             };
-            result = <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Service.ListPage<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>(testModel);
+            result = <#=            _model.TableName#>Service.ListPage<#=            _model.TableName#>(testModel);
             Assert.IsTrue(result.IsSuccess, result.ErrorMessage);
         }
 
@@ -139,53 +129,53 @@ using <#=            _myConfig.NameSpace#>.BLL;
         /// 新增、修改<#=            _model.TableDesc #>
         /// </summary>
         [TestMethod]
-        public void Modify<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>_Test()
+        public void Modify<#=            _model.TableName#>_Test()
         {
-            <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>InputModel testModel = new <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>InputModel()
+            <#=            _model.TableName#>InputModel testModel = new <#=            _model.TableName#>InputModel()
             {
 <#+            foreach(DbColumn column in _model.DbColumns){
                 if(!column.IsNullable){
-                    if(column.ColumnNameAlias.Trim().ToLower().Contains("isdelete")||column.ColumnNameAlias.Trim().Trim().ToLower()==_model.TablePrimarkeyName.Trim().ToLower()){
+                    if(column.IsPrimaryKey){
                         continue;
                     }
                     if(column.CSharpType.ToLower().Contains("guid"))
                     {#>
-                <#=                        column.ColumnNameAlias.Trim()#>=Guid.NewGuid(),
+                <#=                        column.ColumnNameAlias#>=Guid.NewGuid(),
                 <#+                    }      else if(column.CSharpType.ToLower().Contains("bool")) {    #>
-                <#=                        column.ColumnNameAlias.Trim()#> = <#=                        new Random(Guid.NewGuid().GetHashCode()).Next(1)==0?"true":"false"#>,
+                <#=                        column.ColumnNameAlias#> = <#=                        new Random(Guid.NewGuid().GetHashCode()).Next(1)==0?"true":"false"#>,
                 <#+                    }      else if(column.CSharpType.ToLower().Contains("int")||column.CSharpType.ToLower().Contains("decimal")) {    #>
-                <#=                        column.ColumnNameAlias.Trim()#> = <#=                        new Random(Guid.NewGuid().GetHashCode()).Next(100)#>,
+                <#=                        column.ColumnNameAlias#> = <#=                        new Random(Guid.NewGuid().GetHashCode()).Next(100)#>,
                 <#+                    }      else if(column.CSharpType.ToLower().Contains("date")) {    #>
-                <#=                        column.ColumnNameAlias.Trim()#> = DateTime.Now,
-                <#+                    }else{#><#=                        column.ColumnNameAlias.Trim()#> = "测试<#=                        column.ColumnNameAlias.Trim()#>",
+                <#=                        column.ColumnNameAlias#> = DateTime.Now,
+                <#+                    }else{#><#=                        column.ColumnNameAlias#> = "测试<#=                        column.ColumnNameAlias#>",
             <#+                    } }} #>};
-            BaseResultModel<<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>OutputModel> result = <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Service.Modify<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>(testModel);
+            BaseResultModel<<#=            _model.TableName#>OutputModel> result = <#=            _model.TableName#>Service.Modify<#=            _model.TableName#>(testModel);
             Assert.IsTrue(result.IsSuccess, result.ErrorMessage);
 
-            testModel = new <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>InputModel()
+            testModel = new <#=            _model.TableName#>InputModel()
             {
-                <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ID= result.Data.<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ID,
+                <#=            _model.TableName#>ID= result.Data.<#=            _model.TableName#>ID,
 <#+            foreach(DbColumn column in _model.DbColumns){
                 if(!column.IsNullable){
-                    if(column.ColumnNameAlias.Trim().ToLower().Contains("isdelete")||column.ColumnNameAlias.Trim().Trim().ToLower()==_model.TablePrimarkeyName.Trim().ToLower()){
+                    if(column.IsPrimaryKey){
                         continue;
                     }
                     if(column.CSharpType.ToLower().Contains("guid"))
                     {#>
-                <#=                        column.ColumnNameAlias.Trim()#> =Guid.NewGuid(),
+                <#=                        column.ColumnNameAlias#> =Guid.NewGuid(),
                 <#+                    }      else if(column.CSharpType.ToLower().Contains("bool")) {    #>
-                <#=                        column.ColumnNameAlias.Trim()#> = <#=                        new Random(Guid.NewGuid().GetHashCode()).Next(1)==0?"true":"false"#>,
+                <#=                        column.ColumnNameAlias#> = <#=                        new Random(Guid.NewGuid().GetHashCode()).Next(1)==0?"true":"false"#>,
                 <#+                    }      else if(column.CSharpType.ToLower().Contains("int")||column.CSharpType.ToLower().Contains("decimal")) {    #>
-                <#=                        column.ColumnNameAlias.Trim()#> = <#=                        new Random(Guid.NewGuid().GetHashCode()).Next(100)#>,
+                <#=                        column.ColumnNameAlias#> = <#=                        new Random(Guid.NewGuid().GetHashCode()).Next(100)#>,
                 <#+                    }      else if(column.CSharpType.ToLower().Contains("date")) {    #>
-                <#=                        column.ColumnNameAlias.Trim()#> = DateTime.Now,
-                <#+                    }else{#><#=                        column.ColumnNameAlias.Trim()#> = "测试<#=                        column.ColumnNameAlias.Trim()#>",
+                <#=                        column.ColumnNameAlias#> = DateTime.Now,
+                <#+                    }else{#><#=                        column.ColumnNameAlias#> = "测试<#=                        column.ColumnNameAlias#>",
             <#+                    } }   break;} #>
             };
-            result = <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Service.Modify<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>(testModel);
+            result = <#=            _model.TableName#>Service.Modify<#=            _model.TableName#>(testModel);
             Assert.IsTrue(result.IsSuccess, result.ErrorMessage);
 			
-            BaseResultModel<int> delResult = <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Service.Delete<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>(new List<Guid?>() { testModel.<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ID });
+            BaseResultModel<int> delResult = <#=            _model.TableName#>Service.Delete<#=            _model.TableName#>(new List<Guid?>() { testModel.<#=            _model.TableName#>ID });
             Assert.IsTrue(delResult.IsSuccess, delResult.ErrorMessage);
         }
 
@@ -193,34 +183,34 @@ using <#=            _myConfig.NameSpace#>.BLL;
         /// 获取单个<#=            _model.TableDesc #> 
         /// </summary>
         [TestMethod]
-        public void Get<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>_Test()
+        public void Get<#=            _model.TableName#>_Test()
         {
-            <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>InputModel testModel = new <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>InputModel()
+            <#=            _model.TableName#>InputModel testModel = new <#=            _model.TableName#>InputModel()
             {
 <#+            foreach(DbColumn column in _model.DbColumns){
                 if(!column.IsNullable){
-                    if(column.ColumnNameAlias.Trim().ToLower().Contains("isdelete")||column.ColumnNameAlias.Trim().Trim().ToLower()==_model.TablePrimarkeyName.Trim().ToLower()){
+                    if(column.IsPrimaryKey){
                         continue;
                     }
                     if(column.CSharpType.ToLower().Contains("guid"))
                     {#>
-                <#=                        column.ColumnNameAlias.Trim()#>=Guid.NewGuid(),
+                <#=                        column.ColumnNameAlias#>=Guid.NewGuid(),
                 <#+                    }      else if(column.CSharpType.ToLower().Contains("bool")) {    #>
-                <#=                        column.ColumnNameAlias.Trim()#> = <#=                        new Random(Guid.NewGuid().GetHashCode()).Next(1)==0?"true":"false"#>,
+                <#=                        column.ColumnNameAlias#> = <#=                        new Random(Guid.NewGuid().GetHashCode()).Next(1)==0?"true":"false"#>,
                 <#+                    }      else if(column.CSharpType.ToLower().Contains("int")||column.CSharpType.ToLower().Contains("decimal")) {    #>
-                <#=                        column.ColumnNameAlias.Trim()#> = <#=                        new Random(Guid.NewGuid().GetHashCode()).Next(100)#>,
+                <#=                        column.ColumnNameAlias#> = <#=                        new Random(Guid.NewGuid().GetHashCode()).Next(100)#>,
                 <#+                    }      else if(column.CSharpType.ToLower().Contains("date")) {    #>
-                <#=                        column.ColumnNameAlias.Trim()#> = DateTime.Now,
-                <#+                    }else{#><#=                        column.ColumnNameAlias.Trim()#> = "测试<#=                        column.ColumnNameAlias.Trim()#>",
+                <#=                        column.ColumnNameAlias#> = DateTime.Now,
+                <#+                    }else{#><#=                        column.ColumnNameAlias#> = "测试<#=                        column.ColumnNameAlias#>",
             <#+                    } }} #>
             };
-            BaseResultModel<<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>OutputModel> insModelResult = <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Service.Modify<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>(testModel);
+            BaseResultModel<<#=            _model.TableName#>OutputModel> insModelResult = <#=            _model.TableName#>Service.Modify<#=            _model.TableName#>(testModel);
             Assert.IsTrue(insModelResult.IsSuccess, insModelResult.ErrorMessage);
 
-            BaseResultModel<<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ViewModel> result = <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Service.Get<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>(insModelResult.Data.<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ID);
+            BaseResultModel<<#=            _model.TableName#>ViewModel> result = <#=            _model.TableName#>Service.Get<#=            _model.TableName#>(insModelResult.Data.<#=            _model.TableName#>ID);
             Assert.IsTrue(result.IsSuccess, result.ErrorMessage);
 			
-            BaseResultModel<int> delResult = <#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>Service.Delete<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>(new List<Guid?>() { insModelResult.Data.<#=            StringHandler.GetCamel(_model.TableName.Replace(_myConfig.TableName,""))#>ID });
+            BaseResultModel<int> delResult = <#=            _model.TableName#>Service.Delete<#=            _model.TableName#>(new List<Guid?>() { insModelResult.Data.<#=            _model.TableName#>ID });
             Assert.IsTrue(delResult.IsSuccess, delResult.ErrorMessage);
         }
         #endregion

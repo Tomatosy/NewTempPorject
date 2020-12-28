@@ -1,5 +1,5 @@
 ﻿
-namespace SeaSky.PersonnelPerformance.DAL
+namespace Tomato.NewTempProject.DAL
 {
 using Microsoft.Practices.Unity;
 using Tomato.StandardLib.MyBaseClass;
@@ -14,14 +14,14 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Data.Common;
 using Tomato.StandardLib.MyModel;
-using SeaSky.PersonnelPerformance.Model;
+using Tomato.NewTempProject.Model;
 
-    public class AppraisalsRepository : DALPageBaseNew<AppraisalsModel,AppraisalsOutputModel, AppraisalsViewModel>, IAppraisalsRepository
+    public class AcademicYearRepository : DALPageBaseNew<AcademicYearModel,AcademicYearOutputModel, AcademicYearViewModel>, IAcademicYearRepository
     {
         [Dependency]
         public IUnityContainer Container { get; set; }
 
-        public AppraisalsRepository() : base("BaseConn", DatabaseMode.SqlClient)
+        public AcademicYearRepository() : base("BaseConn", DatabaseMode.SqlClient)
         {
 
         }

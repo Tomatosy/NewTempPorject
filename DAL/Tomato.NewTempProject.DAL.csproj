@@ -52,8 +52,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Appraisals\AppraisalsRepository.cs" />
-    <Compile Include="Appraisals\IAppraisalsRepository.cs" />
+    <Compile Include="AcademicYear\AcademicYearRepository.cs" />
+    <Compile Include="AcademicYear\IAcademicYearRepository.cs" />
     <Compile Include="ModelDetail\IModelDetailRepository.cs" />
     <Compile Include="ModelDetail\ModelDetailRepository.cs" />
     <Compile Include="Model\IModelRepository.cs" />
@@ -84,8 +84,8 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>TomatoRepositorySy.cs</LastGenOutput>
       <LastOutputs>
-.\Appraisals\AppraisalsRepository.cs
-.\Appraisals\IAppraisalsRepository.cs
+.\AcademicYear\AcademicYearRepository.cs
+.\AcademicYear\IAcademicYearRepository.cs
 </LastOutputs>
     </Content>
   </ItemGroup>
