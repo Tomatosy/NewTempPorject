@@ -6,6 +6,8 @@
 	"TableName": "tb_",
 	"ViewNamePrefix": "View_",
 	"SonTableList": [
-		"tb_AcademicYear"
+		"tb_AcademicYear",
+		"tb_Auth",
+		"tb_Dic"
 	]
 }

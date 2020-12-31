@@ -94,6 +94,146 @@
             学年表输出扩展类
             </summary>
         </member>
+        <member name="T:Tomato.NewTempProject.Model.AuthInputModel">
+            <summary>
+            用户权限表输入扩展类
+            </summary>
+        </member>
+        <member name="T:Tomato.NewTempProject.Model.AuthModel">
+            <summary>
+            用户权限表
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.AuthModel.AuthID">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.AuthModel.Pernr">
+            <summary>
+            工号
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.AuthModel.Orgeh">
+            <summary>
+            部门ID
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.AuthModel.RoleID">
+            <summary>
+            角色ID（多角色，多行）
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.AuthModel.IsDelete">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.AuthModel._authID">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.AuthModel._pernr">
+            <summary>
+            工号
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.AuthModel._orgeh">
+            <summary>
+            部门ID
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.AuthModel._roleID">
+            <summary>
+            角色ID（多角色，多行）
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.AuthModel._isDelete">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="T:Tomato.NewTempProject.Model.AuthOutputModel">
+            <summary>
+            用户权限表输出扩展类
+            </summary>
+        </member>
+        <member name="T:Tomato.NewTempProject.Model.AuthViewModel">
+            <summary>
+            学年表输出扩展类
+            </summary>
+        </member>
+        <member name="T:Tomato.NewTempProject.Model.DicInputModel">
+            <summary>
+            数据字典表输入扩展类
+            </summary>
+        </member>
+        <member name="T:Tomato.NewTempProject.Model.DicModel">
+            <summary>
+            数据字典表
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.DicModel.DicID">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.DicModel.DicName">
+            <summary>
+            选择组名称
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.DicModel.DicValue">
+            <summary>
+            键
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.DicModel.DicText">
+            <summary>
+            文本
+            </summary>
+        </member>
+        <member name="P:Tomato.NewTempProject.Model.DicModel.IsDelete">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.DicModel._dicID">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.DicModel._dicName">
+            <summary>
+            选择组名称
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.DicModel._dicValue">
+            <summary>
+            键
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.DicModel._dicText">
+            <summary>
+            文本
+            </summary>
+        </member>
+        <member name="F:Tomato.NewTempProject.Model.DicModel._isDelete">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="T:Tomato.NewTempProject.Model.DicOutputModel">
+            <summary>
+            数据字典表输出扩展类
+            </summary>
+        </member>
+        <member name="T:Tomato.NewTempProject.Model.DicViewModel">
+            <summary>
+            学年表输出扩展类
+            </summary>
+        </member>
         <member name="T:Tomato.NewTempProject.Model.ModelDetailInputModel">
             <summary>
             模块明细表输入扩展类

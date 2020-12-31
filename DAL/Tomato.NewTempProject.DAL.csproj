@@ -54,6 +54,10 @@
   <ItemGroup>
     <Compile Include="AcademicYear\AcademicYearRepository.cs" />
     <Compile Include="AcademicYear\IAcademicYearRepository.cs" />
+    <Compile Include="Auth\AuthRepository.cs" />
+    <Compile Include="Auth\IAuthRepository.cs" />
+    <Compile Include="Dic\DicRepository.cs" />
+    <Compile Include="Dic\IDicRepository.cs" />
     <Compile Include="ModelDetail\IModelDetailRepository.cs" />
     <Compile Include="ModelDetail\ModelDetailRepository.cs" />
     <Compile Include="Model\IModelRepository.cs" />
@@ -86,6 +90,10 @@
       <LastOutputs>
 .\AcademicYear\AcademicYearRepository.cs
 .\AcademicYear\IAcademicYearRepository.cs
+.\Auth\AuthRepository.cs
+.\Auth\IAuthRepository.cs
+.\Dic\DicRepository.cs
+.\Dic\IDicRepository.cs
 </LastOutputs>
     </Content>
   </ItemGroup>

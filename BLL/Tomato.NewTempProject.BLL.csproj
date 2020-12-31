@@ -64,6 +64,10 @@
   <ItemGroup>
     <Compile Include="AcademicYear\AcademicYearService.cs" />
     <Compile Include="AcademicYear\IAcademicYearService.cs" />
+    <Compile Include="Auth\AuthService.cs" />
+    <Compile Include="Auth\IAuthService.cs" />
+    <Compile Include="Dic\DicService.cs" />
+    <Compile Include="Dic\IDicService.cs" />
     <Compile Include="Units\ApplicationContext.cs" />
     <Compile Include="Units\DynamicTableHelper.cs" />
     <Compile Include="Units\LogWriter.cs" />
@@ -87,6 +91,10 @@
       <LastOutputs>
 .\AcademicYear\AcademicYearService.cs
 .\AcademicYear\IAcademicYearService.cs
+.\Auth\AuthService.cs
+.\Auth\IAuthService.cs
+.\Dic\DicService.cs
+.\Dic\IDicService.cs
 </LastOutputs>
     </Content>
   </ItemGroup>

@@ -47,6 +47,14 @@
     <Compile Include="AcademicYear\AcademicYearModel.cs" />
     <Compile Include="AcademicYear\AcademicYearOutputModel.cs" />
     <Compile Include="AcademicYear\AcademicYearViewModel.cs" />
+    <Compile Include="Auth\AuthInputModel.cs" />
+    <Compile Include="Auth\AuthModel.cs" />
+    <Compile Include="Auth\AuthOutputModel.cs" />
+    <Compile Include="Auth\AuthViewModel.cs" />
+    <Compile Include="Dic\DicInputModel.cs" />
+    <Compile Include="Dic\DicModel.cs" />
+    <Compile Include="Dic\DicOutputModel.cs" />
+    <Compile Include="Dic\DicViewModel.cs" />
     <Compile Include="Enum\EnumLogLevel.cs" />
     <Compile Include="ModelDetail\ModelDetailInputModel.cs" />
     <Compile Include="ModelDetail\ModelDetailModel.cs" />
@@ -79,6 +87,14 @@
 .\AcademicYear\AcademicYearModel.cs
 .\AcademicYear\AcademicYearOutputModel.cs
 .\AcademicYear\AcademicYearViewModel.cs
+.\Auth\AuthInputModel.cs
+.\Auth\AuthModel.cs
+.\Auth\AuthOutputModel.cs
+.\Auth\AuthViewModel.cs
+.\Dic\DicInputModel.cs
+.\Dic\DicModel.cs
+.\Dic\DicOutputModel.cs
+.\Dic\DicViewModel.cs
 </LastOutputs>
     </Content>
   </ItemGroup>

@@ -1,16 +1,16 @@
 ﻿namespace UnitTest_Tomato.NewTempProject
 {
-    using System;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Microsoft.Practices.Unity;
-    using Tomato.StandardLib.MyModel;
-    using System.Collections.Generic;
-    using System.Transactions;
-    using Tomato.NewTempProject.Model;
-    using Tomato.NewTempProject.BLL;
+using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.Practices.Unity;
+using Tomato.StandardLib.MyModel;
+using System.Collections.Generic;
+using System.Transactions;
+using Tomato.NewTempProject.Model;
+using Tomato.NewTempProject.BLL;
 
     [TestClass]
-    public class AcademicYear_Test
+    public class AcademicYear_Test 
     {
 
         private IAcademicYearService AcademicYearService = ApplicationContext.Current.UnityContainer.Resolve<IAcademicYearService>();
@@ -51,12 +51,12 @@
             {
                 PageNO = 1,
                 PageSize = 2,
-                AcademicYearName = "测试AcademicYearName"
-            };
+                AcademicYearName="测试AcademicYearName"
+				                 };
             result = AcademicYearService.ListViewPageAcademicYear(testModel);
             Assert.IsTrue(result.IsSuccess, result.ErrorMessage);
         }
-
+		
         /// <summary>
         /// 获取学年表列表分页
         /// </summary>
@@ -71,8 +71,8 @@
             {
                 PageNO = 1,
                 PageSize = 2,
-                AcademicYearName = "测试AcademicYearName"
-            };
+                AcademicYearName="测试AcademicYearName"
+				                 };
             result = AcademicYearService.ListPageAcademicYear(testModel);
             Assert.IsTrue(result.IsSuccess, result.ErrorMessage);
         }
@@ -85,21 +85,21 @@
         {
             AcademicYearInputModel testModel = new AcademicYearInputModel()
             {
-                AcademicYearName = "测试AcademicYearName",
-                Term = "测试Term",
-                InputStatus = 8,
-            };
+AcademicYearName = "测试AcademicYearName",
+            Term = "测试Term",
+                            InputStatus = 27,
+                };
             BaseResultModel<AcademicYearOutputModel> result = AcademicYearService.ModifyAcademicYear(testModel);
             Assert.IsTrue(result.IsSuccess, result.ErrorMessage);
 
             testModel = new AcademicYearInputModel()
             {
-                AcademicYearID = result.Data.AcademicYearID,
-                AcademicYearName = "测试AcademicYearName",
-            };
+                AcademicYearID= result.Data.AcademicYearID,
+AcademicYearName = "测试AcademicYearName",
+                        };
             result = AcademicYearService.ModifyAcademicYear(testModel);
             Assert.IsTrue(result.IsSuccess, result.ErrorMessage);
-
+			
             BaseResultModel<int> delResult = AcademicYearService.DeleteAcademicYear(new List<Guid?>() { testModel.AcademicYearID });
             Assert.IsTrue(delResult.IsSuccess, delResult.ErrorMessage);
         }
@@ -112,16 +112,16 @@
         {
             AcademicYearInputModel testModel = new AcademicYearInputModel()
             {
-                AcademicYearName = "测试AcademicYearName",
-                Term = "测试Term",
-                InputStatus = 27,
-            };
+AcademicYearName = "测试AcademicYearName",
+            Term = "测试Term",
+                            InputStatus = 20,
+                            };
             BaseResultModel<AcademicYearOutputModel> insModelResult = AcademicYearService.ModifyAcademicYear(testModel);
             Assert.IsTrue(insModelResult.IsSuccess, insModelResult.ErrorMessage);
 
             BaseResultModel<AcademicYearViewModel> result = AcademicYearService.GetAcademicYear(insModelResult.Data.AcademicYearID);
             Assert.IsTrue(result.IsSuccess, result.ErrorMessage);
-
+			
             BaseResultModel<int> delResult = AcademicYearService.DeleteAcademicYear(new List<Guid?>() { insModelResult.Data.AcademicYearID });
             Assert.IsTrue(delResult.IsSuccess, delResult.ErrorMessage);
         }

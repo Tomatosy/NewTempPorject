@@ -224,6 +224,8 @@
     <Compile Include="Common\NopiExcel.cs" />
     <Compile Include="Common\WordTemplateHelper.cs" />
     <Compile Include="Controllers\AcademicYearController.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\DicController.cs" />
     <Compile Include="Controllers\ModelController.cs" />
     <Compile Include="Controllers\ModelDetailController.cs" />
     <Compile Include="Controllers\UploadController.cs" />
@@ -252,6 +254,8 @@
       <LastGenOutput>TomatoControllerSy.cs</LastGenOutput>
       <LastOutputs>
 .\Controllers\AcademicYearController.cs
+.\Controllers\AuthController.cs
+.\Controllers\DicController.cs
 .\unity.config
 </LastOutputs>
     </Content>
