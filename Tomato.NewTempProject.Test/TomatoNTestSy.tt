@@ -32,7 +32,7 @@
         }
         tableName=tableInfo.TableName.Replace(myConfig.TableName,"");
         string destPath = Path.Combine(curPath, tableName);
-        string fileName = string.Format(@"{0}\{1}.cs",curPath, StringHandler.GetCamel(tableName)+"_Test");
+        string fileName = string.Format(@"{0}\{1}.cs",curPath, StringHandler.GetCamel(tableName)+"_Test_T4");
         TomatoNTestSy template = new TomatoNTestSy(tableInfo,myConfig);
         template.Output.Encoding = Encoding.UTF8;
         template.Output.PreserveExistingFile =!myConfig.IsOverrideFile;

@@ -35,7 +35,7 @@
         }
         tableName=tableInfo.TableName.Replace(myConfig.TableName,"");
 
-        string fileName = string.Format(@"{0}\{1}.cs",curPath+@"\Controllers", StringHandler.GetCamel(tableName)+"Controller");
+        string fileName = string.Format(@"{0}\{1}.cs",curPath+@"\Controllers", StringHandler.GetCamel(tableName)+"Controller_T4");
 
         TomatoControllerSy template = new TomatoControllerSy(tableInfo,myConfig);
         template.Output.Encoding = Encoding.UTF8;

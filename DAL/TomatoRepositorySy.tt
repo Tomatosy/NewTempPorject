@@ -35,13 +35,13 @@
         tableName=tableInfo.TableName.Replace(myConfig.TableName,"");
         string destPath = Path.Combine(curPath, tableName);
 
-        string  fileName = string.Format(@"{0}\{1}.cs", destPath, StringHandler.GetCamel(tableName)+"Repository");
+        string  fileName = string.Format(@"{0}\{1}.cs", destPath, StringHandler.GetCamel(tableName)+"Repository_T4");
         TomatoRepositorySy  template1 = new TomatoRepositorySy(tableInfo,myConfig);
         template1.Output.Encoding = Encoding.UTF8;
         template1.Output.PreserveExistingFile =!myConfig.IsOverrideFile;
         template1.RenderToFile(fileName);
 
-        fileName = string.Format(@"{0}\{1}.cs",destPath, "I" +StringHandler.GetCamel(tableName)+"Repository");
+        fileName = string.Format(@"{0}\{1}.cs",destPath, "I" +StringHandler.GetCamel(tableName)+"Repository_T4");
         TomatoIRepositorySy template = new TomatoIRepositorySy(tableInfo,myConfig);
         template.Output.Encoding = Encoding.UTF8;
         template.Output.PreserveExistingFile =!myConfig.IsOverrideFile;

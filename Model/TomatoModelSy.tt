@@ -36,19 +36,19 @@
         }
         tableName=tableInfo.TableName.Replace(myConfig.TableName,"");
         string destPath = Path.Combine(curPath, tableName);
-        string fileName = string.Format(@"{0}\{1}.cs",destPath, StringHandler.GetCamel(tableName)+"Model");
+        string fileName = string.Format(@"{0}\{1}.cs",destPath, StringHandler.GetCamel(tableName)+"Model_T4");
         TomatoModelSy template = new TomatoModelSy(tableInfo,myConfig);
         template.Output.Encoding = Encoding.UTF8;
         template.Output.PreserveExistingFile =!myConfig.IsOverrideFile;
         template.RenderToFile(fileName);
 
-        fileName = string.Format(@"{0}\{1}.cs", destPath, StringHandler.GetCamel(tableName)+"InputModel");
+        fileName = string.Format(@"{0}\{1}.cs", destPath, StringHandler.GetCamel(tableName)+"InputModel_T4");
         TomatoInputModelSy  template1 = new TomatoInputModelSy(tableInfo,myConfig);
         template1.Output.Encoding = Encoding.UTF8;
         template1.Output.PreserveExistingFile =!myConfig.IsOverrideFile;
         template1.RenderToFile(fileName);
 
-        fileName = string.Format(@"{0}\{1}.cs", destPath, StringHandler.GetCamel(tableName)+"OutputModel");
+        fileName = string.Format(@"{0}\{1}.cs", destPath, StringHandler.GetCamel(tableName)+"OutputModel_T4");
         TomatoOutputModelSy  template2 = new TomatoOutputModelSy(tableInfo,myConfig);
         template2.Output.Encoding = Encoding.UTF8;
         template2.Output.PreserveExistingFile =!myConfig.IsOverrideFile;
@@ -91,7 +91,7 @@
         }
         tableName=viewInfo.ViewName.Replace(myConfig.TableName,"");
         string destPath = Path.Combine(curPath, tableName);
-        string fileName = string.Format(@"{0}\{1}.cs", destPath, StringHandler.GetCamel(tableName)+"ViewModel");
+        string fileName = string.Format(@"{0}\{1}.cs", destPath, StringHandler.GetCamel(tableName)+"ViewModel_T4");
         TomatoViewModelSy  template3 = new TomatoViewModelSy(viewInfo,myConfig);
         template3.Output.Encoding = Encoding.UTF8;
         template3.Output.PreserveExistingFile =!myConfig.IsOverrideFile;
