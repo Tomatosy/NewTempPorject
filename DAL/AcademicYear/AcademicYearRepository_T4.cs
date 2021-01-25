@@ -16,7 +16,7 @@ using System.Data.Common;
 using Tomato.StandardLib.MyModel;
 using Tomato.NewTempProject.Model;
 
-    public class AcademicYearRepository : DALPageBaseNew<AcademicYearModel,AcademicYearOutputModel, AcademicYearViewModel>, IAcademicYearRepository
+    public partial class AcademicYearRepository : DALPageBaseNew<AcademicYearModel,AcademicYearOutputModel, AcademicYearViewModel>, IAcademicYearRepository
     {
         [Dependency]
         public IUnityContainer Container { get; set; }

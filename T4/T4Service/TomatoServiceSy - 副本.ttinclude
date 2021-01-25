@@ -3,7 +3,7 @@
     //  Copyright © toamto@石阳. All Rights Reserved.
     // </copyright>
 
-    public class TomatoServiceSy : CSharpTemplate
+    public partial class TomatoServiceSy : CSharpTemplate
     {
         private DbTable _model;
         private MyConfig _myConfig;
@@ -54,7 +54,7 @@ using <#=_myConfig.NameSpace#>.Model.Enum;
 using <#=_myConfig.NameSpace#>.DAL;
 using Tomato.StandardLib.MyExtensions;
 
-    public class <#=_model.TableName#>Service : I<#=_model.TableName#>Service
+    public partial class <#=_model.TableName#>Service : I<#=_model.TableName#>Service
     {
         [Dependency]
         public I<#=_model.TableName#>Repository <#=_model.TableName#>Repository { get; set; }

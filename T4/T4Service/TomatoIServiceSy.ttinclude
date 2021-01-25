@@ -3,7 +3,7 @@
     //  Copyright © toamto@石阳. All Rights Reserved.
     // </copyright>
 
-    public class TomatoIServiceSy : CSharpTemplate
+    public partial class TomatoIServiceSy : CSharpTemplate
     {
         private DbTable _model;
         private MyConfig _myConfig;
@@ -43,7 +43,7 @@ namespace <#=            _myConfig.NameSpace #>.BLL
     using Tomato.StandardLib.MyModel;
 using <#=            _myConfig.NameSpace#>.Model;
 
-    public interface I<#=            _model.TableName#>Service 
+    public partial interface I<#=            _model.TableName#>Service 
     {
 
         #region 基础方法

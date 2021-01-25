@@ -16,7 +16,7 @@ using Tomato.NewTempProject.Model.Enum;
 using Tomato.NewTempProject.DAL;
 using Tomato.StandardLib.MyExtensions;
 
-    public class AuthService : IAuthService
+    public partial class AuthService : IAuthService
     {
         [Dependency]
         public IAuthRepository AuthRepository { get; set; }

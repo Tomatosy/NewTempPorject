@@ -10,7 +10,7 @@ using Tomato.NewTempProject.Model;
 using Tomato.NewTempProject.BLL;
 
     [TestClass]
-    public class AcademicYear_Test 
+    public partial class AcademicYear_Test 
     {
 
         private IAcademicYearService AcademicYearService = ApplicationContext.Current.UnityContainer.Resolve<IAcademicYearService>();
@@ -87,7 +87,7 @@ using Tomato.NewTempProject.BLL;
             {
 AcademicYearName = "测试AcademicYearName",
             Term = "测试Term",
-                            InputStatus = 27,
+                            InputStatus = 82,
                 };
             BaseResultModel<AcademicYearOutputModel> result = AcademicYearService.ModifyAcademicYear(testModel);
             Assert.IsTrue(result.IsSuccess, result.ErrorMessage);
@@ -114,7 +114,7 @@ AcademicYearName = "测试AcademicYearName",
             {
 AcademicYearName = "测试AcademicYearName",
             Term = "测试Term",
-                            InputStatus = 20,
+                            InputStatus = 46,
                             };
             BaseResultModel<AcademicYearOutputModel> insModelResult = AcademicYearService.ModifyAcademicYear(testModel);
             Assert.IsTrue(insModelResult.IsSuccess, insModelResult.ErrorMessage);

@@ -3,7 +3,7 @@
     //  Copyright © toamto@石阳. All Rights Reserved.
     // </copyright>
 
-    public class TomatoViewModelSy : CSharpTemplate
+    public partial class TomatoViewModelSy : CSharpTemplate
     {
         private ViewInfo _model;
         private MyConfig _myConfig;

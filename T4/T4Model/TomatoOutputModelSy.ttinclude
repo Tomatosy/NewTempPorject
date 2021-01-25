@@ -3,7 +3,7 @@
     //  Copyright © toamto@石阳. All Rights Reserved.
     // </copyright>
 
-    public class TomatoOutputModelSy : CSharpTemplate
+    public partial class TomatoOutputModelSy : CSharpTemplate
     {
         private DbTable _model;
         private MyConfig _myConfig;

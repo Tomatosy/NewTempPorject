@@ -3,7 +3,7 @@
     //  Copyright © toamto@石阳. All Rights Reserved.
     // </copyright>
 
-    public class SeaSkyRepositorySy : CSharpTemplate
+    public partial class SeaSkyRepositorySy : CSharpTemplate
     {
         private DbTable _model;
         private MyConfig _myConfig;
@@ -53,7 +53,7 @@ using System.Data.Common;
 using SeaSky.StandardLib.MyModel;
 using <#=            _myConfig.NameSpace#>.Model;
 
-    public class <#=            _model.TableName#>Repository : DALPageBaseNew<<#=            _model.TableName#>Model,<#=            _model.TableName#>OutputModel, <#=            _model.TableName#>ViewModel>, I<#=            _model.TableName#>Repository
+    public partial class <#=            _model.TableName#>Repository : DALPageBaseNew<<#=            _model.TableName#>Model,<#=            _model.TableName#>OutputModel, <#=            _model.TableName#>ViewModel>, I<#=            _model.TableName#>Repository
     {
         [Dependency]
         public IUnityContainer Container { get; set; }

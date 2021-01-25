@@ -52,12 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AcademicYear\AcademicYearRepository.cs" />
-    <Compile Include="AcademicYear\IAcademicYearRepository.cs" />
-    <Compile Include="Auth\AuthRepository.cs" />
-    <Compile Include="Auth\IAuthRepository.cs" />
-    <Compile Include="Dic\DicRepository.cs" />
-    <Compile Include="Dic\IDicRepository.cs" />
+    <Compile Include="AcademicYear\AcademicYearRepository_T4.cs" />
+    <Compile Include="AcademicYear\IAcademicYearRepository_T4.cs" />
+    <Compile Include="Auth\AuthRepository_T4.cs" />
+    <Compile Include="Auth\IAuthRepository_T4.cs" />
+    <Compile Include="Dic\DicRepository_T4.cs" />
+    <Compile Include="Dic\IDicRepository_T4.cs" />
     <Compile Include="ModelDetail\IModelDetailRepository.cs" />
     <Compile Include="ModelDetail\ModelDetailRepository.cs" />
     <Compile Include="Model\IModelRepository.cs" />
@@ -88,12 +88,12 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>TomatoRepositorySy.cs</LastGenOutput>
       <LastOutputs>
-.\AcademicYear\AcademicYearRepository.cs
-.\AcademicYear\IAcademicYearRepository.cs
-.\Auth\AuthRepository.cs
-.\Auth\IAuthRepository.cs
-.\Dic\DicRepository.cs
-.\Dic\IDicRepository.cs
+.\AcademicYear\AcademicYearRepository_T4.cs
+.\AcademicYear\IAcademicYearRepository_T4.cs
+.\Auth\AuthRepository_T4.cs
+.\Auth\IAuthRepository_T4.cs
+.\Dic\DicRepository_T4.cs
+.\Dic\IDicRepository_T4.cs
 </LastOutputs>
     </Content>
   </ItemGroup>

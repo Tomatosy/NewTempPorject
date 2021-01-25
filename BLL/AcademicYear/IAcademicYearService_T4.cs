@@ -5,42 +5,42 @@
     using Tomato.StandardLib.MyModel;
 using Tomato.NewTempProject.Model;
 
-    public interface IDicService 
+    public partial interface IAcademicYearService 
     {
 
         #region 基础方法
         /// <summary>
-        /// 获取数据字典表视图列表分页
+        /// 获取学年表视图列表分页
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        BaseResultModel<PageModel<DicViewModel>> ListViewPageDic(DicViewModel model);
+        BaseResultModel<PageModel<AcademicYearViewModel>> ListViewPageAcademicYear(AcademicYearViewModel model);
 
         /// <summary>
-        /// 获取数据字典表列表分页
+        /// 获取学年表列表分页
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        BaseResultModel<PageModel<DicOutputModel>> ListPageDic(DicInputModel model);
+        BaseResultModel<PageModel<AcademicYearOutputModel>> ListPageAcademicYear(AcademicYearInputModel model);
 
         /// <summary>
-        /// 新增、修改数据字典表
+        /// 新增、修改学年表
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        BaseResultModel<DicOutputModel> ModifyDic(DicInputModel model);
+        BaseResultModel<AcademicYearOutputModel> ModifyAcademicYear(AcademicYearInputModel model);
 
         /// <summary>
-        /// 删除数据字典表 (逻辑删除)
+        /// 删除学年表 (逻辑删除)
         /// </summary>
         /// <param name="IDs"></param>
         /// <returns></returns>
-        BaseResultModel<int> DeleteDic(List<Guid?> IDs);
+        BaseResultModel<int> DeleteAcademicYear(List<Guid?> IDs);
 
         /// <summary>
-        /// 获取单个数据字典表
+        /// 获取单个学年表
         /// </summary>
-        BaseResultModel<DicViewModel> GetDic(Guid? ID);
+        BaseResultModel<AcademicYearViewModel> GetAcademicYear(Guid? ID);
 
         #endregion  
   }

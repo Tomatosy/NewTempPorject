@@ -5,7 +5,7 @@
     using Tomato.StandardLib.MyModel;
 using Tomato.NewTempProject.Model;
 
-    public interface IAuthService 
+    public partial interface IAuthService 
     {
 
         #region 基础方法

@@ -3,7 +3,7 @@
     //  Copyright © toamto@石阳. All Rights Reserved.
     // </copyright>
 
-    public class SeaSkyControllerSy : CSharpTemplate
+    public partial class SeaSkyControllerSy : CSharpTemplate
     {
         private DbTable _model;
         private MyConfig _myConfig;
@@ -49,7 +49,7 @@ using SeaSky.StandardLib.MyExtensions;
 namespace <#=            _myConfig.NameSpace #>.WebApi.Controllers
 {
 
-    public class <#=            _model.TableName#>Controller : ApiController
+    public partial class <#=            _model.TableName#>Controller : ApiController
     {
 
         private I<#=            _model.TableName#>Service <#=            _model.TableName#>Service = ApplicationContext.Current.UnityContainer.Resolve<I<#=            _model.TableName#>Service>();

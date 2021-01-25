@@ -16,7 +16,7 @@ using Tomato.NewTempProject.Model.Enum;
 using Tomato.NewTempProject.DAL;
 using Tomato.StandardLib.MyExtensions;
 
-    public class DicService : IDicService
+    public partial class DicService : IDicService
     {
         [Dependency]
         public IDicRepository DicRepository { get; set; }

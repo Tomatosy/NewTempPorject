@@ -3,7 +3,7 @@
     //  Copyright © toamto@石阳. All Rights Reserved.
     // </copyright>
 
-    public class TomatoIRepositorySy : CSharpTemplate
+    public partial class TomatoIRepositorySy : CSharpTemplate
     {
         private DbTable _model;
         private MyConfig _myConfig;
@@ -47,7 +47,7 @@ using Tomato.StandardLib.MyBaseClass;
 using Tomato.StandardLib.MyModel;
 using <#=            _myConfig.NameSpace#>.Model;
 
-    public interface I<#=            _model.TableName#>Repository : IDALBaseNew<<#=            _model.TableName#>Model, <#=            _model.TableName#>OutputModel, <#=            _model.TableName#>ViewModel>, IDALPageBaseNew<<#=            _model.TableName#>Model, <#=            _model.TableName#>OutputModel, <#=            _model.TableName#>ViewModel>
+    public partial interface I<#=            _model.TableName#>Repository : IDALBaseNew<<#=            _model.TableName#>Model, <#=            _model.TableName#>OutputModel, <#=            _model.TableName#>ViewModel>, IDALPageBaseNew<<#=            _model.TableName#>Model, <#=            _model.TableName#>OutputModel, <#=            _model.TableName#>ViewModel>
     {
 
     }

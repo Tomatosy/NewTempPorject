@@ -3,7 +3,7 @@
     //  Copyright © toamto@石阳. All Rights Reserved.
     // </copyright>
 
-    public class TomatoNTestSy : CSharpTemplate
+    public partial class TomatoNTestSy : CSharpTemplate
     {
         private DbTable _model;
         private MyConfig _myConfig;
@@ -48,7 +48,7 @@ using <#=            _myConfig.NameSpace#>.Model;
 using <#=            _myConfig.NameSpace#>.BLL;
 
     [TestClass]
-    public class <#=            _model.TableName#>_Test 
+    public partial class <#=            _model.TableName#>_Test 
     {
 
         private I<#=            _model.TableName#>Service <#=            _model.TableName#>Service = ApplicationContext.Current.UnityContainer.Resolve<I<#=            _model.TableName#>Service>();

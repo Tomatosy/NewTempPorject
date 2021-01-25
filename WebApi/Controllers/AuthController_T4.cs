@@ -11,90 +11,90 @@ using Tomato.StandardLib.MyExtensions;
 namespace Tomato.NewTempProject.WebApi.Controllers
 {
 
-    public class DicController : ApiController
+    public partial class AuthController : ApiController
     {
 
-        private IDicService DicService = ApplicationContext.Current.UnityContainer.Resolve<IDicService>();
+        private IAuthService AuthService = ApplicationContext.Current.UnityContainer.Resolve<IAuthService>();
 
 
         #region 基础方法
 		
         /// <summary>
-        /// 获取数据字典表视图列表分页
+        /// 获取用户权限表视图列表分页
         /// </summary>
         /// <param name="model">ViewModel</param>
         /// <returns>ViewModel</returns>
-        public BaseResultModel<PageModel<DicViewModel>> ListViewPageDic(DicViewModel model)
+        public BaseResultModel<PageModel<AuthViewModel>> ListViewPageAuth(AuthViewModel model)
         {
-            return DicService.ListViewPageDic(model);
+            return AuthService.ListViewPageAuth(model);
         }
 		
         /// <summary>
-        /// 获取数据字典表列表分页
+        /// 获取用户权限表列表分页
         /// </summary>
         /// <param name="model">InputModel</param>
         /// <returns>OutputModel</returns>
-        public BaseResultModel<PageModel<DicOutputModel>> ListPageDic(DicInputModel model)
+        public BaseResultModel<PageModel<AuthOutputModel>> ListPageAuth(AuthInputModel model)
         {
-            return DicService.ListPageDic(model);
+            return AuthService.ListPageAuth(model);
         }
 
         /// <summary>
-        /// 新增、修改数据字典表
+        /// 新增、修改用户权限表
         /// </summary>
         /// <param name="model">OutputModel</param>
         /// <returns>OutputModel</returns>
-        public BaseResultModel<DicOutputModel> ModifyDic(DicInputModel model)
+        public BaseResultModel<AuthOutputModel> ModifyAuth(AuthInputModel model)
         {
             if (model == null)
             {
-                return new ErrorResultModel<DicOutputModel>(EnumErrorCode.请求参数错误, "参数不能为空");
+                return new ErrorResultModel<AuthOutputModel>(EnumErrorCode.请求参数错误, "参数不能为空");
             }
             ModelAttrEx arrtEx = new ModelAttrEx();
             string modelErrorMes = "";
-            if (model.DicID.IsNullOrEmpty())
+            if (model.AuthID.IsNullOrEmpty())
             {
-                modelErrorMes += arrtEx.AddAttrVaild<DicInputModel>(ModelState, model);
+                modelErrorMes += arrtEx.AddAttrVaild<AuthInputModel>(ModelState, model);
             }
             else
             {
-                modelErrorMes += arrtEx.EditAttrVaild<DicInputModel>(ModelState, model);
+                modelErrorMes += arrtEx.EditAttrVaild<AuthInputModel>(ModelState, model);
             }
             if (!modelErrorMes.IsNullOrEmpty())
             {
-                return new ErrorResultModel<DicOutputModel>(EnumErrorCode.请求参数错误, modelErrorMes);
+                return new ErrorResultModel<AuthOutputModel>(EnumErrorCode.请求参数错误, modelErrorMes);
             }
-            return DicService.ModifyDic(model);
+            return AuthService.ModifyAuth(model);
         }
 
         /// <summary>
-        /// 删除数据字典表 (逻辑删除)
+        /// 删除用户权限表 (逻辑删除)
         /// </summary>
         /// <param name="IDs">List-->Guid?</param>
         /// <returns>受影响行数</returns>
         [HttpPost]
-        public BaseResultModel<int> DeleteDic(List<Guid?> IDs)
+        public BaseResultModel<int> DeleteAuth(List<Guid?> IDs)
         {
             if (IDs==null||IDs.Count == 0)
             {
                 return new ErrorResultModel<int>(EnumErrorCode.请求参数错误, "参数不能为空");
             }
-            return DicService.DeleteDic(IDs);
+            return AuthService.DeleteAuth(IDs);
         }
 
         /// <summary>
-        /// 获取单个数据字典表
+        /// 获取单个用户权限表
         /// </summary>
         /// <param name="ID">Guid?</param>
         /// <returns>ViewModel</returns>
         [HttpPost]
-        public BaseResultModel<DicViewModel> GetDic(Guid? ID)
+        public BaseResultModel<AuthViewModel> GetAuth(Guid? ID)
         {
             if (ID.IsNullOrEmpty())
             {
-                return new ErrorResultModel<DicViewModel>(EnumErrorCode.请求参数错误, "参数不能为空");
+                return new ErrorResultModel<AuthViewModel>(EnumErrorCode.请求参数错误, "参数不能为空");
             }
-            return DicService.GetDic(ID);
+            return AuthService.GetAuth(ID);
         }
         #endregion
     }

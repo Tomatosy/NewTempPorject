@@ -10,7 +10,7 @@ using Tomato.NewTempProject.Model;
 using Tomato.NewTempProject.BLL;
 
     [TestClass]
-    public class Dic_Test 
+    public partial class Dic_Test 
     {
 
         private IDicService DicService = ApplicationContext.Current.UnityContainer.Resolve<IDicService>();

@@ -16,7 +16,7 @@ using System.Data.Common;
 using Tomato.StandardLib.MyModel;
 using Tomato.NewTempProject.Model;
 
-    public class AuthRepository : DALPageBaseNew<AuthModel,AuthOutputModel, AuthViewModel>, IAuthRepository
+    public partial class AuthRepository : DALPageBaseNew<AuthModel,AuthOutputModel, AuthViewModel>, IAuthRepository
     {
         [Dependency]
         public IUnityContainer Container { get; set; }

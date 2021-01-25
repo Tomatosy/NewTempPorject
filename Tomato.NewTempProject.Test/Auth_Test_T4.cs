@@ -10,7 +10,7 @@ using Tomato.NewTempProject.Model;
 using Tomato.NewTempProject.BLL;
 
     [TestClass]
-    public class Auth_Test 
+    public partial class Auth_Test 
     {
 
         private IAuthService AuthService = ApplicationContext.Current.UnityContainer.Resolve<IAuthService>();

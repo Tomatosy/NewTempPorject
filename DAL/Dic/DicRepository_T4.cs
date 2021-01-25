@@ -16,7 +16,7 @@ using System.Data.Common;
 using Tomato.StandardLib.MyModel;
 using Tomato.NewTempProject.Model;
 
-    public class DicRepository : DALPageBaseNew<DicModel,DicOutputModel, DicViewModel>, IDicRepository
+    public partial class DicRepository : DALPageBaseNew<DicModel,DicOutputModel, DicViewModel>, IDicRepository
     {
         [Dependency]
         public IUnityContainer Container { get; set; }

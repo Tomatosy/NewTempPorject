@@ -487,6 +487,13 @@
             带参数据类型
             </summary>
         </member>
+        <member name="M:Tomato.NewTempProject.WebApi.Controllers.AcademicYearController.ListViewPageAcademicYearAAA(Tomato.NewTempProject.Model.AcademicYearViewModel)">
+            <summary>
+            获取学年表视图列表分页
+            </summary>
+            <param name="model">ViewModel</param>
+            <returns>ViewModel</returns>
+        </member>
         <member name="M:Tomato.NewTempProject.WebApi.Controllers.AcademicYearController.ListViewPageAcademicYear(Tomato.NewTempProject.Model.AcademicYearViewModel)">
             <summary>
             获取学年表视图列表分页

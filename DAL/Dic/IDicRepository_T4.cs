@@ -9,7 +9,7 @@ using Tomato.StandardLib.MyBaseClass;
 using Tomato.StandardLib.MyModel;
 using Tomato.NewTempProject.Model;
 
-    public interface IDicRepository : IDALBaseNew<DicModel, DicOutputModel, DicViewModel>, IDALPageBaseNew<DicModel, DicOutputModel, DicViewModel>
+    public partial interface IDicRepository : IDALBaseNew<DicModel, DicOutputModel, DicViewModel>, IDALPageBaseNew<DicModel, DicOutputModel, DicViewModel>
     {
 
     }

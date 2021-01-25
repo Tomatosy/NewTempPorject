@@ -16,7 +16,7 @@ using Tomato.NewTempProject.Model.Enum;
 using Tomato.NewTempProject.DAL;
 using Tomato.StandardLib.MyExtensions;
 
-    public class AcademicYearService : IAcademicYearService
+    public partial class AcademicYearService : IAcademicYearService
     {
         [Dependency]
         public IAcademicYearRepository AcademicYearRepository { get; set; }

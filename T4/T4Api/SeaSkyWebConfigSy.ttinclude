@@ -3,7 +3,7 @@
     //  Copyright © toamto@石阳. All Rights Reserved.
     // </copyright>
 
-    public class SeaSkyWebConfigSy : CSharpTemplate
+    public partial class SeaSkyWebConfigSy : CSharpTemplate
     {
         private string _webConfigStr;
 

@@ -49,7 +49,7 @@
     TomatoWebConfigSy template1 = new TomatoWebConfigSy(webConfigStr.ToString());
     template1.Output.Encoding = Encoding.UTF8;
     template1.Output.PreserveExistingFile =!myConfig.IsOverrideFile;
-    template1.RenderToFile(curPath+@"\unity.config");
+    template1.RenderToFile(curPath+@"\unityNew.config");
 
 
 #>

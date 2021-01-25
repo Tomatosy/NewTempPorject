@@ -62,12 +62,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AcademicYear\AcademicYearService.cs" />
+    <Compile Include="AcademicYear\AcademicYearService_.cs" />
+    <Compile Include="AcademicYear\AcademicYearService_T4.cs" />
     <Compile Include="AcademicYear\IAcademicYearService.cs" />
-    <Compile Include="Auth\AuthService.cs" />
-    <Compile Include="Auth\IAuthService.cs" />
-    <Compile Include="Dic\DicService.cs" />
-    <Compile Include="Dic\IDicService.cs" />
+    <Compile Include="AcademicYear\IAcademicYearService_T4.cs" />
+    <Compile Include="Auth\AuthService_T4.cs" />
+    <Compile Include="Auth\IAuthService_T4.cs" />
+    <Compile Include="Dic\DicService_T4.cs" />
+    <Compile Include="Dic\IDicService_T4.cs" />
     <Compile Include="Units\ApplicationContext.cs" />
     <Compile Include="Units\DynamicTableHelper.cs" />
     <Compile Include="Units\LogWriter.cs" />
@@ -89,12 +91,12 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>TomatoServiceSy.cs</LastGenOutput>
       <LastOutputs>
-.\AcademicYear\AcademicYearService.cs
-.\AcademicYear\IAcademicYearService.cs
-.\Auth\AuthService.cs
-.\Auth\IAuthService.cs
-.\Dic\DicService.cs
-.\Dic\IDicService.cs
+.\AcademicYear\AcademicYearService_T4.cs
+.\AcademicYear\IAcademicYearService_T4.cs
+.\Auth\AuthService_T4.cs
+.\Auth\IAuthService_T4.cs
+.\Dic\DicService_T4.cs
+.\Dic\IDicService_T4.cs
 </LastOutputs>
     </Content>
   </ItemGroup>

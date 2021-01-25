@@ -3,7 +3,7 @@
     //  Copyright © toamto@石阳. All Rights Reserved.
     // </copyright>
 
-    public class TomatoWebConfigSy : CSharpTemplate
+    public partial class TomatoWebConfigSy : CSharpTemplate
     {
         private string _webConfigStr;
 

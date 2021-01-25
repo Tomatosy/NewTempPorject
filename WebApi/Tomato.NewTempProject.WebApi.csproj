@@ -224,8 +224,9 @@
     <Compile Include="Common\NopiExcel.cs" />
     <Compile Include="Common\WordTemplateHelper.cs" />
     <Compile Include="Controllers\AcademicYearController.cs" />
-    <Compile Include="Controllers\AuthController.cs" />
-    <Compile Include="Controllers\DicController.cs" />
+    <Compile Include="Controllers\AcademicYearController_T4.cs" />
+    <Compile Include="Controllers\AuthController_T4.cs" />
+    <Compile Include="Controllers\DicController_T4.cs" />
     <Compile Include="Controllers\ModelController.cs" />
     <Compile Include="Controllers\ModelDetailController.cs" />
     <Compile Include="Controllers\UploadController.cs" />
@@ -253,10 +254,10 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>TomatoControllerSy.cs</LastGenOutput>
       <LastOutputs>
-.\Controllers\AcademicYearController.cs
-.\Controllers\AuthController.cs
-.\Controllers\DicController.cs
-.\unity.config
+.\Controllers\AcademicYearController_T4.cs
+.\Controllers\AuthController_T4.cs
+.\Controllers\DicController_T4.cs
+.\unityNew.config
 </LastOutputs>
     </Content>
     <Content Include="Web.config">
@@ -339,9 +340,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="unity.config" />
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
@@ -349,6 +347,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="upload\BBB.xls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="unityNew.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="unity.config" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
