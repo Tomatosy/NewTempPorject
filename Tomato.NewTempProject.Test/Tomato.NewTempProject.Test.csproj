@@ -67,9 +67,6 @@
     <Reference Include="System.Transactions" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AcademicYear_Test_T4.cs" />
-    <Compile Include="Auth_Test_T4.cs" />
-    <Compile Include="Dic_Test_T4.cs" />
     <Compile Include="DynamicModel_Test.cs" />
     <Compile Include="TomatoNTestSy.cs">
       <AutoGen>True</AutoGen>
