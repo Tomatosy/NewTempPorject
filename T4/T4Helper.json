@@ -1,5 +1,5 @@
 ﻿{
-	"ConnectionString": "server=.;database=DB_SyTest;uid=sa;pwd=123456",
+	"ConnectionString": "server=.;database=DB_Tomato;uid=sa;pwd=123456",
 	"IsOverrideFile": false,
 	"NameSpace": "Tomato.NewTempProject",
 	"NameSpace1": "aaa",
