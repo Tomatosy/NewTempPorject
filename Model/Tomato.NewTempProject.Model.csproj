@@ -43,18 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AcademicYear\AcademicYearInputModel_T4.cs" />
-    <Compile Include="AcademicYear\AcademicYearModel_T4.cs" />
-    <Compile Include="AcademicYear\AcademicYearOutputModel_T4.cs" />
-    <Compile Include="AcademicYear\AcademicYearViewModel_T4.cs" />
-    <Compile Include="Auth\AuthInputModel_T4.cs" />
-    <Compile Include="Auth\AuthModel_T4.cs" />
-    <Compile Include="Auth\AuthOutputModel_T4.cs" />
-    <Compile Include="Auth\AuthViewModel_T4.cs" />
-    <Compile Include="Dic\DicInputModel_T4.cs" />
-    <Compile Include="Dic\DicModel_T4.cs" />
-    <Compile Include="Dic\DicOutputModel_T4.cs" />
-    <Compile Include="Dic\DicViewModel_T4.cs" />
     <Compile Include="Enum\EnumLogLevel.cs" />
     <Compile Include="ModelDetail\ModelDetailInputModel.cs" />
     <Compile Include="ModelDetail\ModelDetailModel.cs" />
@@ -95,6 +83,10 @@
 .\Dic\DicModel_T4.cs
 .\Dic\DicOutputModel_T4.cs
 .\Dic\DicViewModel_T4.cs
+.\ExecProcess\ExecProcessInputModel_T4.cs
+.\ExecProcess\ExecProcessModel_T4.cs
+.\ExecProcess\ExecProcessOutputModel_T4.cs
+.\ExecProcess\ExecProcessViewModel_T4.cs
 </LastOutputs>
     </Content>
   </ItemGroup>

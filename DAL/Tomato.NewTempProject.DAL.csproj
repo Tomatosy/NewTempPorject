@@ -52,12 +52,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AcademicYear\AcademicYearRepository_T4.cs" />
-    <Compile Include="AcademicYear\IAcademicYearRepository_T4.cs" />
-    <Compile Include="Auth\AuthRepository_T4.cs" />
-    <Compile Include="Auth\IAuthRepository_T4.cs" />
-    <Compile Include="Dic\DicRepository_T4.cs" />
-    <Compile Include="Dic\IDicRepository_T4.cs" />
     <Compile Include="ModelDetail\IModelDetailRepository.cs" />
     <Compile Include="ModelDetail\ModelDetailRepository.cs" />
     <Compile Include="Model\IModelRepository.cs" />
