@@ -223,6 +223,9 @@
     <Compile Include="Common\ModelStateValid.cs" />
     <Compile Include="Common\NopiExcel.cs" />
     <Compile Include="Common\WordTemplateHelper.cs" />
+    <Compile Include="Controllers\AcademicYearController_T4.cs" />
+    <Compile Include="Controllers\AuthController_T4.cs" />
+    <Compile Include="Controllers\DicController_T4.cs" />
     <Compile Include="Controllers\ModelController.cs" />
     <Compile Include="Controllers\ModelDetailController.cs" />
     <Compile Include="Controllers\UploadController.cs" />
@@ -253,7 +256,6 @@
 .\Controllers\AcademicYearController_T4.cs
 .\Controllers\AuthController_T4.cs
 .\Controllers\DicController_T4.cs
-.\Controllers\ExecProcessController_T4.cs
 .\unityNew.config
 </LastOutputs>
     </Content>

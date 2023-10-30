@@ -45,6 +45,7 @@
         public void InitDBTable(ModelInputModel model)
         {
 
+
             string firstTableSql = @"
                 IF EXISTS(SELECT 1 FROM sysobjects WHERE id = OBJECT_ID('[{0}]'))
                 drop table {0}
